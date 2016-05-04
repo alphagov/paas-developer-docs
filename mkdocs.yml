@@ -1,0 +1,18 @@
+site_name: Government Platform as a Service documentation
+theme: readthedocs
+pages:
+- Overview:
+    - 'Government Platform as a Service (PaaS)': 'index.md'
+    - 'Before you start': 'overview/before_you_start.md'
+    - 'Quick start guide': 'overview/quick_start_guide.md'
+    - 'Concepts': 'overview/concepts.md'
+- Deploying Apps:
+    - 'General deployment tips': 'deploying_apps/index.md'
+    - 'Excluding Files': 'deploying_apps/excluding_files.md'
+    - 'Quotas': 'deploying_apps/quotas.md'
+    - 'Deploying Rails': 'deploying_apps/deploying_rails.md'
+    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
+    - 'Deploying Django': 'deploying_apps/deploying_django.md'
+    - 'Deploying Node': 'deploying_apps/deploying_node_js.md'
+    - 'Deploying Static Sites': 'deploying_apps/deploying_static_sites.md'
+    - 'Logging': 'deploying_apps/logging.md'
