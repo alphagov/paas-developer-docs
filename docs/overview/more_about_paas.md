@@ -12,9 +12,9 @@ PaaS will initially operate using a freemium model where the first 20 services w
 
 Features of the PaaS platform currently include:
 
-*   Postgres and will include database back-ups
-*   Language support as provided by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/)
-*   Ability to stream application logs to Software as a Service logging platforms
+*   PostgreSQL and will include database back-ups
+*   language support as provided by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/)
+*   ability to stream application logs to Software as a Service logging platforms
 
 ### PaaS uses Cloud Foundry and Amazon Web Services (AWS)
 
