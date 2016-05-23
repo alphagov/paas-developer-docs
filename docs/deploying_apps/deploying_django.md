@@ -5,13 +5,13 @@
 
 ### The Python runtime
 
-Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For instance,
+Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For example:
 
 ```
 python-3.4.1
 ```
 
-### `requirements.txt`
+### The `requirements.txt` file
 
 There are a couple of packages used for the deploy that will be helpful. You'll want to add them to the `requirements.txt` for your project.
 
@@ -44,7 +44,7 @@ from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 ```
 
-You'll need to add a few lines to import the `whitenoise` package and wrap the middleware around the wsgi application. This file will be used to start the wsgi server in your app. Instead of the above example, your wsgi.py should look like this:
+You'll need to add a few lines to import the `whitenoise` package and wrap the middleware around the WSGI application. This file will be used to start the WSGI server in your app. Instead of the above example, your `wsgi.py` should look like this:
 
 ```python
 """
@@ -71,15 +71,15 @@ The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable m
 
 ### The Procfile
 
-The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
+The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put:
 
 ```
 web: waitress-serve --port=$PORT APPNAME.wsgi:application
 ```
 
-`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is.
+Replace`APPNAME.wsgi` with whatever the name of your project WSGI module is.
 
-### The `manifest.yml`
+### The `manifest.yml` file
 
 The [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) tells `cf push` what to do with your app. Here's an example:
 
@@ -96,7 +96,7 @@ applications:
 
 As you can see, it specifies the number of instances, the memory allocated to the application, and the application itself.
 
-### Create the App
+### Create the app
 
 To create and deploy your app:
 
@@ -106,7 +106,7 @@ cf push APPNAME --no-start
 
 Normally, you would be able to view the site at `APPNAME.cloudapps.digital`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
 
-## Setting Up the Database
+## Setting up the database
 
 **First, read [the database guide](/apps/databases/).** If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
 
@@ -114,7 +114,7 @@ Normally, you would be able to view the site at `APPNAME.cloudapps.digital`, but
 import dj_database_url
 ```
 
-Then, you'll need to add a `DATABASES` setting like normal. I recommend adding this to the `settings.py` file so that your `local_settings.py` file will override the settings when you're working locally.
+Then, you'll need to add a `DATABASES` setting like normal. We recommend adding this to the `settings.py` file so that your `local_settings.py` file will override the settings when you're working locally.
 
 ```python
 DATABASES = {}
@@ -129,4 +129,4 @@ Now try running the push command without the `--no-start` flag:
 cf push APPNAME
 ```
 
-It should now be running at `APPNAME.cloudapps.digital`!
+It should now be running at `APPNAME.cloudapps.digital`.

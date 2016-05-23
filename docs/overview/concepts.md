@@ -1,8 +1,9 @@
 ## Terminology
+
 For terminology that is used within PaaS start with [Cloud Foundry’s glossary](http://docs.cloudfoundry.org/concepts/glossary.html).
 
 ## Organisations
-Cloud Foundry groups its users by [organisations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains and quotas. When your account is created, it will be given permissions to an org and a personal space.
+Cloud Foundry groups its users by [organisations](http://docs.cloudfoundry.org/concepts/roles.html#orgs), or "orgs" for short. Orgs group together users for management and present a shared perimeter for services, domains, and quotas. When your account is created, it will be given permissions to an org and a personal space.
 
 ### List available orgs
 ```
@@ -12,14 +13,14 @@ cf orgs
 Only orgs where you've been assigned an org-role or those which contain a space where you've been assigned a space-role will appear.
 
 ### See details about a specific org
-...including quotas, routing domains and which spaces it includes:
+This includes quotas, routing domains, and which spaces the org includes:
 
 ```
 cf org ORGNAME
 ```
 
 ### Target an org
-In order to work with spaces, you'll need to do this first:
+To work with spaces, you need to do this first:
 
 ```
 cf target -o ORGNAME
@@ -42,7 +43,7 @@ cf org-users ORGNAME
 ```
 
 ## Target
-The Cloud Foundry CLI keeps a global state of whatever [organisation](#organisations)+[space](#spaces) you're interacting with. This is known as the "target", and is set via
+The Cloud Foundry CLI keeps a global state of whatever [organisation](#organisations)+[space](#spaces) you're interacting with. This is known as the "target", and is set via:
 
 ```
 cf target -o ORGNAME -s SPACENAME

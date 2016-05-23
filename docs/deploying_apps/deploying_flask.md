@@ -5,9 +5,9 @@
 
 ### WSGI Configuration
 
-You _could_ use the built-in Werkzeug server to send out your Flask app, [but it's not recommended](http://flask.pocoo.org/docs/0.10/deploying/). As with Django, we recommend installing and using `waitress` for a WSGI server. Install it with `pip install waitress`.
+Although you _can_ use the built-in Werkzeug server to send out your Flask app, [it's not recommended](http://flask.pocoo.org/docs/0.10/deploying/). As with Django, we recommend installing and using `waitress` for a WSGI server. Install it with `pip install waitress`.
 
-Switching your Flask app to serve with Waitress instead of the built-in server is fairly simple. The first thing you'll want to do is the app's port to the `VCAP_APP_PORT` environment variable. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. And while you're developing locally you might want to set a local `VCAP_APP_PORT`. You can do that with this code:
+It is farily simple to switch your Flask app to serve with Waitress instead of the built-in server. The first thing you'll want to do is set the app's port to the `VCAP_APP_PORT` environment variable. This is set by Cloud Foundry for you so you don't have to worry about it, but you _do_ need to let Flask know about it. And while you're developing locally you might want to set a local `VCAP_APP_PORT`. You can do that with this code:
 
 ```python
 port = port = int(os.getenv("VCAP_APP_PORT"))
@@ -55,15 +55,15 @@ In that example, `APPNAME` is the name your your app and `VALUE` is whatever you
 
 ### The Procfile
 
-The Procfile contains commands that Cloud Foundry will run to keep your site up. Create a file called `Procfile` and in it put
+The Procfile contains commands that Cloud Foundry will run to keep your site up. Create a file called `Procfile` and in it put:
 
 ```
 web: python index.py
 ```
 
-`index.py` should be replaced with whatever your app's main python file is.
+Replace `index.py` with whatever your app's main python file is.
 
-### The `manifest.yml`
+### The `manifest.yml` file
 
 The [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) tells `cf push` what to do with your app. Here's an example:
 
@@ -81,7 +81,7 @@ applications:
 
 As you can see, it specifies the number of instances, the memory allocated to the application, and the application itself.
 
-### Create the App
+### Create the app
 
 To create and deploy your app:
 
@@ -89,11 +89,11 @@ To create and deploy your app:
 cf push APPNAME
 ```
 
-If you're going to set up a database you probably need to run `cf push --no-start` while you figure out how to get the database going.
+If you're going to set up a database, you probably need to run `cf push --no-start` while you figure out how to get the database going.
 
-## Setting Up the Database
+## Setting up the database
 
-You don't need a database to work with Flask but if you want to try, be sure to update this page with how you did it. **I'd start with reading [the database guide](/apps/databases/).**
+You don't need a database to work with Flask but if you want to try, be sure to update this page with how you did it. **We recommend that you start with reading [the database guide](/apps/databases/).**
 
 ### Running the app
 
@@ -103,4 +103,4 @@ Now try running the push command without the `--no-start` flag:
 cf push APPNAME
 ```
 
-It should now be running at `APPNAME.cloudapps.digital`!
+It should now be running at `APPNAME.cloudapps.digital`.

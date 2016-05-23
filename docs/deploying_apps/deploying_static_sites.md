@@ -29,7 +29,7 @@ applications:
     FORCE_HTTPS: true
 ```
 
-If the static content is included in a different folder, you can add a `path` declaration. E.g., `path: dist` or `path: assets`.
+If the static content is included in a different folder, you can add a `path` declaration. For example: `path: dist` or `path: assets`.
 
 Deploy:
 
@@ -47,7 +47,7 @@ Create a `.travis.yml` file with `edge` set to `true`:
 edge: true
 ```
 
-Run the Cloud Foundry set-up script:
+Run the Cloud Foundry setup script:
 
 ```
 $ travis setup cloudfoundry
@@ -55,7 +55,7 @@ $ travis setup cloudfoundry
 
 Follow the prompts. When you're done, the script will have appended all the necessary markup to the `.travis.yml` file.
 
-Once you merge a Pull Request, Travis will run and deploy the site.
+Once you merge a pull request, Travis will run and deploy the site.
 
 ### Redirect all traffic
 

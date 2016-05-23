@@ -2,12 +2,12 @@ To be hosted by Government PaaS, your application must:
 
 * follow the [Twelve-Factor application](http://12factor.net/) principles
 * be written in a language supported by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/) eg, Go, Nodejs, Java, Python, PHP, Python, Ruby (we don’t support custom buildpacks right now)
-* not carry data at SECRET or above (this is currently out of scope for PaaS)
+* not carry data classified as SECRET or above (this is currently out of scope for PaaS)
 
 ### 12-Factor application principles
 Heroku developers designed 12 best practices for modern apps to follow during development to make them scalable and easy to deploy. 
 
-We have also summarised these practices in the table below, and noted the relevance of each principle to the Government PaaS running Cloud Foundry. 
+We have summarised these practices in the table below, and noted the relevance of each principle to the Government PaaS running Cloud Foundry. 
 
 Visit the [12factor.net website](http://12factor.net/) to further ensure you application supports these practices.
 

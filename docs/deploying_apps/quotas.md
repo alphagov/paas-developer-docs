@@ -1,4 +1,4 @@
-## Quotas:
+## Quotas
 
 Cloud Foundry capacity is managed by quota. Quotas provide a not to exceed reservation of memory, compute, application routes and service instances. 
 
@@ -42,7 +42,7 @@ As a Cloud Foundry user you’re free to divide your organization's quota capaci
 
 `memory: / -m`
 
-The application memory limit. This setting has a dual-purpose as your application compute limit is derived from its memory limit. This relationship is explained in detail below.
+The application memory limit. This setting has a dual-purpose because your application compute limit is derived from its memory limit. This relationship is explained in detail below.
 
 `disk_quota / -k`
 
@@ -73,7 +73,7 @@ Your application can use all available CPU time. If there are other applications
 The application cannot access more than the specified amount of memory.
 
 
-#### Application Quota Options : Sizing
+#### Application Quota Options: Sizing
 
 - The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
