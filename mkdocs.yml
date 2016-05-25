@@ -7,7 +7,7 @@ pages:
     - 'Quick start guide': 'overview/quick_start_guide.md'
     - 'Concepts': 'overview/concepts.md'
 - Deploying Apps:
-    - 'General deployment tips': 'deploying_apps/index.md'
+    - 'How deployment works': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
     - 'Quotas': 'deploying_apps/quotas.md'
     - 'Deploying Rails': 'deploying_apps/deploying_rails.md'
