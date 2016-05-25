@@ -1,6 +1,14 @@
 # Government PaaS Developer Docs
 
-This project uses [MkDocs][]. 
+
+
+This project uses [MkDocs][]. It is automatically built and hosted by [Read
+the Docs][] at the following URL:
+
+- https://government-paas-developer-docs.readthedocs.io/en/latest/
+
+[MkDocs]: http://www.mkdocs.org/
+[Read the Docs]: https://readthedocs.org/
 
 ## Setup
 
