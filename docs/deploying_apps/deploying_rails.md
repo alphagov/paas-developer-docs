@@ -20,7 +20,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     cf set-env <APP_NAME> SECRET_TOKEN `rake secret`
     ```
 
-Your app should now be live at `APP_NAME.cloudapps.digital`!
+Your app should now be live at `https://APP_NAME.cloudapps.digital`!
 
 ## Troubleshooting Asset Precompilation
 
