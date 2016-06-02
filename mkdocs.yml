@@ -17,3 +17,6 @@ pages:
 #    - 'Deploying Django': 'deploying_apps/deploying_django.md'
 #    - 'Deploying Node': 'deploying_apps/deploying_node_js.md'
     - 'Logging': 'deploying_apps/logging.md'
+- Deploying Backing Services:
+    - 'Services Overview': 'deploying_services/index.md'
+    - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'

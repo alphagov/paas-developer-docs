@@ -1,4 +1,9 @@
-See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). Here are the minimal steps for a basic Rails app:
+
+See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). 
+
+Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL (this should be the case if the app follows the 12-factor principle of treating the database as a loosely-coupled backing service).
+
+Here are the minimal steps for a basic Rails app:
 
 1. Follow the setup instructions in [Getting Started](/overview/quick_start_guide/) and review [concepts](/overview/concepts/).  If you are just getting started learning CloudFoundry, you can use the sandbox space:
 
@@ -19,6 +24,7 @@ See the official CF guide: [Getting Started Deploying Ruby on Rails Apps](http:/
     ```
     cf set-env <APP_NAME> SECRET_TOKEN `rake secret`
     ```
+1. [Create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/).
 
 Your app should now be live at `https://APP_NAME.cloudapps.digital`!
 

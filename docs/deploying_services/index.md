@@ -1,0 +1,1 @@
+PaaS offers a number of services through the Cloud Foundry marketplace such as PostgreSQL and Elasticsearch.
