@@ -103,4 +103,4 @@ Now try running the push command without the `--no-start` flag:
 cf push APPNAME
 ```
 
-It should now be running at `APPNAME.cloudapps.digital`!
+It should now be running at `https://APPNAME.cloudapps.digital`!

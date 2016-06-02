@@ -104,7 +104,7 @@ To create and deploy your app:
 cf push APPNAME --no-start
 ```
 
-Normally, you would be able to view the site at `APPNAME.cloudapps.digital`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
+Normally, you would be able to view the site at `https://APPNAME.cloudapps.digital`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
 
 ## Setting Up the Database
 
@@ -129,4 +129,4 @@ Now try running the push command without the `--no-start` flag:
 cf push APPNAME
 ```
 
-It should now be running at `APPNAME.cloudapps.digital`!
+It should now be running at `https://APPNAME.cloudapps.digital`!

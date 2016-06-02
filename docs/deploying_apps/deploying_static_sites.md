@@ -17,16 +17,14 @@ Add some markup:
 </html>
 ```
 
-Create a `manifest.yml` that uses the [`staticfile-buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
+Create a `manifest.yml` that uses the [`staticfile_buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
 
 ```yml
 ---
 applications:
 - name: my-static-site
   memory: 64M
-  buildpack: https://github.com/cloudfoundry/staticfile_buildpack.git
-  env:
-    FORCE_HTTPS: true
+  buildpack: staticfile_buildpack
 ```
 
 If the static content is included in a different folder, you can add a `path` declaration. E.g., `path: dist` or `path: assets`.

@@ -16,7 +16,7 @@ The command to create a new app and to push a new version of an existing one are
     cf push <APPNAME>
     ```
 
-The app should now be live at `APPNAME.cloudapps.digital`.
+The app should now be live at `https://APPNAME.cloudapps.digital`.
 
 ## Caveats
 * Don't write to local storage (it's ephemeral)
