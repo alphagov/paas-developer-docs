@@ -4,7 +4,7 @@ pages:
 - Overview:
     - 'Government Platform as a Service (PaaS)': 'index.md'
     - 'Benefits of PaaS' : 'overview/more_about_paas.md'
-    - 'Before you start': 'overview/before_you_start.md'
+    - 'PaaS Requirements': 'overview/before_you_start.md'
     - 'Quick start guide': 'overview/quick_start_guide.md'
     - 'Concepts': 'overview/concepts.md'
 - Deploying Apps:

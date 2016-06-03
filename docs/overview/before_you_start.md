@@ -1,15 +1,24 @@
 To be hosted by Government PaaS, your application must:
 
-* follow the [Twelve-Factor application](http://12factor.net/) principles
-* be written in a language supported by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/) eg, Go, Nodejs, Java, Python, PHP, Python, Ruby (we don’t support custom buildpacks right now)
-* not carry data at SECRET or above (this is currently out of scope for PaaS)
+* follow the [twelve-factor application](http://12factor.net/) principles
+* be written in a language supported by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/):
+	* Go
+	* Nodejs
+	* Java
+	* Python
+	* PHP
+	* Python
+	* Ruby
+	* or a static HTML/CSS/Javascript site
+* not require any backing service apart from a database (currently the only service available is PostgreSQL)
+* not carry data at SECRET or above (this is currently out of scope for Government PaaS)
 
-### 12-Factor application principles
-Heroku developers designed 12 best practices for modern apps to follow during development to make them scalable and easy to deploy. 
+### 12-Factor Application Principles
+These principles were formulated by Adam Wiggins, the cofounder of the [Heroku](https://www.heroku.com/) platform. They outline practices for modern apps to follow during development to make them scalable and easy to deploy. Your app must follow these practices to work on the Cloud Foundry technology which is used by the Government PaaS.
 
-We have also summarised these practices in the table below, and noted the relevance of each principle to the Government PaaS running Cloud Foundry. 
+We have summarised the practices in the table below, and noted the relevance of each principle to the Government PaaS.
 
-Visit the [12factor.net website](http://12factor.net/) to further ensure you application supports these practices.
+Visit the [12factor.net website](http://12factor.net/) to further ensure your application supports these practices.
 
 |Principle  |Meaning  |Relevance to Cloud Foundry  |
 |:---|:---|:---|
