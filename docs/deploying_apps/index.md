@@ -23,6 +23,6 @@ The app should now be live at `https://APPNAME.cloudapps.digital`.
 * Instances will be restarted if they [exceed memory limits](/deploying_apps/quotas/)
 * Proper [logging](/deploying_apps/logging/) might require special libraries/configuration for your app
 
-## Setting Environment Variables
+## Setting environment variables
 
 See Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).

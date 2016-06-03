@@ -1,60 +1,57 @@
-## Quotas:
+Cloud Foundry capacity is managed by quotas. Quotas provide a reservation of application routes, memory, compute power, and service instances which your organization cannot exceed. You can set individual application quotas to control how much of your quota each of your applications can use.
 
-Cloud Foundry capacity is managed by quota. Quotas provide a not to exceed reservation of memory, compute, application routes and service instances. 
+### Quota allocations
 
-### Quota allocations:
+Your organisation will be assigned a quota based on your stated needs. This will cover the app instances you run. Backing services do not count towards this quota.
 
-Your organisation will be assigned a quota based on your stated needs, this will cover the app instances you run. Backing services do not count towards this quota.
++ **Routes**: Hostname and domain pairs where an application that exposes a listening port can be reached.
 
-#### Routes:
++ **RAM**: The amount of RAM available to your applications. The application also has a compute share derived from its memory limit.
 
-Hostname and domain pairs where an application that exposes a listening port can be reached.
++ **Service instances**: The number of service instances available to your organization. 
 
-#### RAM:
 
-The amount of RAM available to your applications.
 
-#### Service Instances:
+### Quota limits
 
-The number of service instances available to your organization. 
-
-#### Quota Limits:
-
-If a new application `push` would exceed your organization's quota the request will fail with status code `400` and a message describing the limit that would be exceeded.
+If a new application `push` would exceed your organization's quota, the request will fail with status code `400` and a message describing the limit that would be exceeded.
 
 **Example:**
 
 	Creating app APPLICATION in org ORG / space SPACE as USER...
 	FAILED
-	Server error, status code: 400, error code: 100007, message: You have exceeded the memory limit for your organization's quota.
+	Server error, status code: 400, error code: 100007, message: 
+	You have exceeded the memory limit for your organization's quota.
 
 In this situation you have three options:
 
-1. Delete existing resources with `cf delete`, `delete-service`, `delete-route` or similar.
-2. Reconfigure existing [Application Quotas](#application-quotas) and redeploy.
-3. Request a quota change <gov-uk-paas-support@digital.cabinet-office.gov.uk>.
+1. Delete existing resources with `cf delete`, `cf delete-service`, `cf delete-route` or similar commands.
+2. Reconfigure existing [application quotas](#application-quotas) and redeploy.
+3. Request a quota change: contact us at <gov-uk-paas-support@digital.cabinet-office.gov.uk>.
 
-### Application Quotas:
+### Application quotas
 
-As a Cloud Foundry user you’re free to divide your organization's quota capacity amongst your applications as you see fit by way of application quotas. Application limits are specified in your application manifest or as `cf push` command line options.
+As a PaaS tenant, you can divide your organization's quota capacity amongst your applications as you see fit, by way of application quotas. Application limits are specified in your application manifest or as `cf push` command line options.
 
-#### Application Quota Options:
+Use the following commands to set application quota options:
 
-`memory: / -m`
++ `memory: / -m`
 
-The application memory limit. This setting has a dual-purpose as your application compute limit is derived from its memory limit. This relationship is explained in detail below.
+	Your application's memory limit. An application's compute limit is derived from its memory limit. This relationship is explained in detail below.
 
-`disk_quota / -k`
++ `disk_quota / -k`
 
-The maximum amount of disk space available to your app.
+	The maximum amount of disk space available to your app.
 
-`instances: / -i`
++ `instances: / -i`
 
-Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
+	Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
 
-#### Application Quota Options : Memory Share equals Compute Share
+	For a production application, you should always launch at least two instances.
 
-As noted above, your application's compute limit is derived from a its memory limit. Each application receives a compute share equal to its relative share of memory.
+#### Memory share and compute share
+
+Your application's compute limit is derived from its memory limit. Each application receives a compute share equal to its relative share of memory.
 
 Your application will be guaranteed to receive a portion of the vCPU compute power equal to it's portion of memory allocation. 
 
@@ -73,9 +70,9 @@ Your application can use all available CPU time. If there are other applications
 The application cannot access more than the specified amount of memory.
 
 
-#### Application Quota Options : Sizing
+#### Application quota sizing
 
-- The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
+- The environment default of 512MB `memory` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
 		requested state: started
 		instances: 1/1
