@@ -23,8 +23,35 @@ As a tenant, nearly all of your interactions with Cloud Foundry will be through 
 
 Your `USERNAME` is your email address your account was created with.
 
-## CF CLI
+You will then be prompted to enter your password, which 
+
 Once logged in you can see the available commands by running ```cf```.
+
+## Organisations and spaces
+
+Your tenant account belongs to one or more organisations ("orgs" for short). Orgs group together CF users for management and present a shared perimeter for services, domains and quotas.
+
+To list available orgs, run:
+
+``cf orgs``
+
+To see details about an org, run:
+
+``cf org ORGNAME``
+
+where ORGNAME is the name of the org.
+
+Each org contains one or more spaces. Applications in the same space share a location for app development, deployment, and maintenance.
+
+To see the spaces in your current org, run:
+
+``cf spaces``
+
+The Cloud Foundry CLI keeps a global state of the organisation and space you're currently interacting with. This is known as the "target", and is set via:
+
+``cf target -o ORGNAME -s SPACENAME``
+
+You will need to set a target before you deploy your app.
 
 ## Deploying a test app
 To practice deploying an app, try following the [deploying a static site](/deploying_apps/deploying_static_sites/) process.
