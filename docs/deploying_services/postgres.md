@@ -38,4 +38,4 @@ To do this:
 
     where APPLICATION is the name of a deployed instance of your application (exactly as specified in your manifest or push command).
 
-5. The app should now be able to access PostgreSQL. You can check that there are no database connection errors by viewing the recent logs with ``cf logs APP_NAME --recent``.
+5. The app should now be able to access PostgreSQL. You can check that there are no database connection errors by viewing the recent logs with ``cf logs APPNAME --recent``.

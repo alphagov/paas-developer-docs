@@ -8,7 +8,7 @@ pages:
     - 'Pricing' : 'overview/pricing.md'
 - Getting Started:
     - 'PaaS Requirements': 'getting_started/before_you_start.md'
-    - 'Quick Setup Guide': 'getting_started/quick_start_guide.md'
+    - 'Quick Setup Guide': 'getting_started/quick_setup_guide.md'
 - Deploying Apps:
     - 'Deployment Tips': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
@@ -18,12 +18,12 @@ pages:
 #    - 'Deploying Django': 'deploying_apps/deploying_django.md'
 #    - 'Deploying Node': 'deploying_apps/deploying_node_js.md'
     - 'Using Travis CI': 'deploying_apps/travis_ci.md'
-    - 'Quotas': 'deploying_apps/quotas.md'
     - 'Logging': 'deploying_apps/logging.md'
     - 'Redirect All Traffic': 'deploying_apps/redirect_all_traffic.md'
 - Deploying Backing Services:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'
-- Scaling Apps:
-    - 'Scaling Overview' : 'scaling/index.md'
+- Managing Apps:
+    - 'Scaling Apps' : 'managing_apps/scaling.md'
+    - 'Quotas': 'managing_apps/quotas.md'
 copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.

@@ -3,30 +3,40 @@ For full details of how to deploy Ruby on Rails apps, see the official Cloud Fou
 
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL (this should be the case if the app follows the 12-factor principle of treating the database as a loosely-coupled backing service).
 
-Here are the minimal steps for a basic Rails app:
+This section explains minimal steps for deploying a basic Rails app.
 
-1. Follow the setup instructions in [Getting Started](/overview/quick_start_guide/) and review [concepts](/overview/concepts/).  If you are just getting started learning CloudFoundry, you can use the sandbox space:
+These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-    ```
-    cf target -o sandbox
-    ```
+If you are just getting started learning CloudFoundry, you can use the sandbox space:
+
+``cf target -o sandbox``
 
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
 1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
-1. Create the application on Cloud Foundry.
+1. Create the application using Cloud Foundry:
 
     ```
-    cf push <APP_NAME>
+    cf push APPNAME  
     ```
 
-1. Set additional [environment variables](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html) required by your app. For example:
+
+1. Set any additional [environment variables](//deploying_apps/#setting-environment-variables/) required by your app. For example:
+
     ```
-    cf set-env <APP_NAME> SECRET_TOKEN `rake secret`
+    cf set-env APPNAME VARIABLE `value`
     ```
+
+    where VARIABLE is a unique name for the variable, and `value` is the value to set.
 
 1. If your app requires a database, [create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/).
 
-Your app should now be live at `https://APP_NAME.cloudapps.digital`!
+Your app should now be live at `https://APPNAME.cloudapps.digital`!
+
+For a production site, you should run at least two instances of the app to improve availability.
+
+You can add another instance of this static app by running:
+
+``cf scale APPNAME -i 2``
 
 ## Troubleshooting asset precompilation
 

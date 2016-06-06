@@ -51,21 +51,12 @@ Use the following commands to set application quota options:
 
 #### Memory share and compute share
 
-Your application's compute limit is derived from its memory limit. Each application receives a compute share equal to its relative share of memory.
+Your application's compute limit is derived from its memory limit. Each application receives a guaranteed compute share equal to its relative share of memory.
 
-Your application will be guaranteed to receive a portion of the vCPU compute power equal to it's portion of memory allocation. 
+Your application will be guaranteed to receive a portion of the vCPU compute power equal to its portion of memory allocation. In other words, it will receive at least this much vCPU time even if there are other applications competing for time.
 
-Your application will be offered 100% of the vCPU compute power.
-
-**Guaranteed:**
-
-Your application will receive at least this much vCPU time even if there are other applications competing for time.
-
-**Offered:** 
-
-Your application can use all available CPU time. If there are other applications competing for time, each application's guaranteed share determines how much time it will receive.
-
-**Limited:**
+Your application will be offered 100% of the vCPU compute power. If no other applications are running, the app can use all the computer power available.
+If there are other applications competing for time, each application's guaranteed share determines how much time it will receive.
 
 The application cannot access more than the specified amount of memory.
 

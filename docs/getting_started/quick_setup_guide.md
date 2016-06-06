@@ -21,11 +21,13 @@ As a tenant, nearly all of your interactions with Cloud Foundry will be through 
     cf login -a api.cloud.service.gov.uk -u USERNAME
     ```
 
-Your `USERNAME` is your email address your account was created with.
+    Your `USERNAME` is your email address your account was created with.
 
-You will then be prompted to enter your password, which 
+    You will then be prompted to enter your password, which should have been sent to you by email (subject "Welcome to the Government PaaS").
 
-Once logged in you can see the available commands by running ```cf```.
+Once logged in, you can see the available commands by running ```cf```.
+
+For security, you should change your password using ``cf passwd``.
 
 ## Organisations and spaces
 

@@ -1,41 +1,50 @@
 This section explains how to create and deploy a static HTML page. It's
 worth testing that you can carry out this process before you try to deploy a dynamic app.
 
-Create `index.html`:
+These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-``
-$ touch index.html
-``
+1. Create `index.html`:
 
-Add some markup to the `index.html` file:
+    ``
+    touch index.html
+    ``
 
-```html
-<html>
-  <head>
-    <title>Static Site</title>
-  </head>
-  <body>
-    <p>Welcome to the static site!</p>
-  </body>
-</html>
-```
+2. Add some markup to the `index.html` file:
 
-Create a `manifest.yml` which uses the [`staticfile_buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
+    
+        <html>
+          <head>
+            <title>Static Site</title>
+          </head>
+          <body>
+            <p>Welcome to the static site!</p>
+          </body>
+        </html>
+    
 
-```yml
----
-applications:
-- name: my-static-site
-  memory: 64M
-  buildpack: staticfile_buildpack
-```
+3. Create a `manifest.yml` which uses the [`staticfile_buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
 
-If the static content is included in a different folder, you can add a `path` declaration, e.g. `path: dist` or `path: assets`.
+        ---
+        applications:
+        + name: my-static-site
+        memory: 64M
+        buildpack: staticfile_buildpack
+    
+    Replace ``my-static-site`` with the name you want for your app.
 
-From the directory where the `manifest.yml` file is:
+    If the static content is included in a different folder, you can add a `path` declaration, e.g. `path: dist` or `path: assets`.
 
-``
-cf push
-``
+4. From the directory where the `manifest.yml` file is, run:
 
+    ``
+    cf push
+    ``
+
+The site should now be live at `https://APPNAME.cloudapps.digital`.
+
+For a production site, you should run at least two instances of the app to improve availability.
+
+You can add another instance of this static app by running:
+
+``cf scale APPNAME -i 2``
 
