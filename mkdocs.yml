@@ -7,9 +7,8 @@ pages:
     - 'Technology' : 'overview/technology.md'
     - 'Pricing' : 'overview/pricing.md'
 - Getting Started:
-    - 'PaaS Requirements': 'overview/before_you_start.md'
-    - 'Quick Setup Guide': 'overview/quick_start_guide.md'
-    - 'Concepts': 'overview/concepts.md'
+    - 'PaaS Requirements': 'getting_started/before_you_start.md'
+    - 'Quick Setup Guide': 'getting_started/quick_start_guide.md'
 - Deploying Apps:
     - 'Deployment Tips': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'

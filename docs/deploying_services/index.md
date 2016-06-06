@@ -4,4 +4,4 @@ In Cloud Foundry, backing services are referred to as 'services' and are availab
 
 Currently, the only service available is the PostgreSQL database. 
 
-We are going to add more services in future, including Elasticsearch and Redis.
+We are going to add more services in future based on demand, including Elasticsearch and Redis. If you need a particular backing service that we don't yet support, please let us know at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
