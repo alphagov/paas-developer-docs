@@ -8,7 +8,7 @@ pages:
     - 'Pricing' : 'overview/pricing.md'
 - Getting Started:
     - 'PaaS Requirements': 'overview/before_you_start.md'
-    - 'Quick Start Guide': 'overview/quick_start_guide.md'
+    - 'Quick Setup Guide': 'overview/quick_start_guide.md'
     - 'Concepts': 'overview/concepts.md'
 - Deploying Apps:
     - 'Deployment Tips': 'deploying_apps/index.md'
@@ -27,3 +27,4 @@ pages:
     - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'
 - Scaling Apps:
     - 'Scaling Overview' : 'scaling/index.md'
+copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.
