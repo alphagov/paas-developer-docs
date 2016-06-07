@@ -1,82 +1,56 @@
-Create `index.html`:
+This section explains how to create and deploy a static HTML page. It's
+worth testing that you can carry out this process before you try to deploy a dynamic app.
 
-```
-$ touch index.html
-```
+These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-Add some markup:
+1. Create `index.html`:
 
-```html
-<html>
-  <head>
-    <title>Static Site</title>
-  </head>
-  <body>
-    <p>Welcome to the static site!</p>
-  </body>
-</html>
-```
+    ``
+    touch index.html
+    ``
 
-Create a `manifest.yml` that uses the [`staticfile_buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
+2. Add some markup to the `index.html` file:
 
-```yml
----
-applications:
-- name: my-static-site
-  memory: 64M
-  buildpack: staticfile_buildpack
-```
+    
+        <html>
+          <head>
+            <title>Static Site</title>
+          </head>
+          <body>
+            <p>Welcome to the static site!</p>
+          </body>
+        </html>
+    
 
-If the static content is included in a different folder, you can add a `path` declaration. E.g., `path: dist` or `path: assets`.
+3. Create a `manifest.yml` which uses the [`staticfile_buildpack`](https://github.com/cloudfoundry/staticfile-buildpack):
 
-Deploy:
+        ---
+        applications:
+        - name: my-static-site
+        memory: 64M
+        buildpack: staticfile_buildpack
+    
+    Replace ``my-static-site`` with a unique name for your app.
 
-```
-$ cf push
-```
+    If the app name is not unique, you will get an error like this:
 
-### Continuous deployment with Travis-CI
+        Server error, status code: 400, error code: 210003, message: The host is taken: taken_name
 
-Add your repo to Travis-CI.
+    You can use ``cf apps`` to see the apps which are already running.
 
-Create a `.travis.yml` file with `edge` set to `true`:
+    If the static content is included in a different folder, you can add a `path` declaration, e.g. `path: dist` or `path: assets`.
 
-```yml
-edge: true
-```
+4. From the directory where the `manifest.yml` file is, run:
 
-Run the Cloud Foundry set-up script:
+    ``
+    cf push
+    ``
 
-```
-$ travis setup cloudfoundry
-```
+The site should now be live at `https://APPNAME.cloudapps.digital`.
 
-Follow the prompts. When you're done, the script will have appended all the necessary markup to the `.travis.yml` file.
+For a production site, you should run at least two instances of the app to ensure availability.
 
-Once you merge a Pull Request, Travis will run and deploy the site.
+You can add another instance of this static app by running:
 
-### Redirect all traffic
+``cf scale APPNAME -i 2``
 
-If a site moves to a different domain name, you can use a simple static site with a custom `nginx.conf`
-file to redirect all traffic from the old domain to the new domain. Example `nginx.conf` site for `NEW_DOMAIN_NAME`:
-
-```
-worker_processes 1;
-daemon off;
-
-error_log <%= ENV["APP_ROOT"] %>/nginx/logs/error.log;
-events { worker_connections 1024; }
-
-http {
-  server {
-    listen <%= ENV["PORT"] %>;
-    server_name localhost;
-    return 301 $scheme://NEW_DOMAIN_NAME$request_uri;
-  }
-}
-```
-
-Deploy your application to `NEW_DOMAIN_NAME` and then `cf push` a simple static site with that `nginx.conf`
-configuration to the old domain name. You can see a [full working example](https://github.com/18F/c2-redirect).
-
-You can read more about [nginx customization](https://github.com/cloudfoundry/staticfile-buildpack#advanced-nginx-configuration).
