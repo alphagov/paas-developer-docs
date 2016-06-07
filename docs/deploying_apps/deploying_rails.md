@@ -34,7 +34,7 @@ Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
 For a production site, you should run at least two instances of the app to improve availability.
 
-You can add another instance of this static app by running:
+You can add another instance of your app by running:
 
 ``cf scale APPNAME -i 2``
 
