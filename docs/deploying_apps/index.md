@@ -45,7 +45,7 @@ There are two system-provided environment variables:
 
 You can also create your own variables.
 
-To view current an app's current environment variables, run:
+To view an app's current environment variables, run:
 
 ``cf env APPNAME``
 
