@@ -14,11 +14,11 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 1. Check out your Rails app to a local folder.
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
 1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
-1. Create a manifest.yml file in the 
+1. Create a manifest.yml file in the folder where you checked out your app.
 
         ---
         applications:
-        + name: my-rails-app
+        - name: my-rails-app
           memory: 256M
           buildpack: ruby_buildpack
 
@@ -29,7 +29,9 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
     cf push  
     ```
 
-    If you do not specify a name for the app, the name from the manifest file is used.
+    from the folder where you checked out your app.
+
+    If you do not specify a name for the app after the ``cf push`` command, the name from the manifest file is used.
 
 1. Set any additional [environment variables](//deploying_apps/#setting-environment-variables/) required by your app. For example:
 
