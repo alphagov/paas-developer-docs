@@ -26,11 +26,17 @@ These steps assume you have already carried out the setup process explained in t
 
         ---
         applications:
-        + name: my-static-site
+        - name: my-static-site
         memory: 64M
         buildpack: staticfile_buildpack
     
-    Replace ``my-static-site`` with the name you want for your app.
+    Replace ``my-static-site`` with a unique name for your app.
+
+    If the app name is not unique, you will get an error like this:
+
+        Server error, status code: 400, error code: 210003, message: The host is taken: taken_name
+
+    You can use ``cf apps`` to see the apps which are already running.
 
     If the static content is included in a different folder, you can add a `path` declaration, e.g. `path: dist` or `path: assets`.
 
@@ -42,7 +48,7 @@ These steps assume you have already carried out the setup process explained in t
 
 The site should now be live at `https://APPNAME.cloudapps.digital`.
 
-For a production site, you should run at least two instances of the app to improve availability.
+For a production site, you should run at least two instances of the app to ensure availability.
 
 You can add another instance of this static app by running:
 

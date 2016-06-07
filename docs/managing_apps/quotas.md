@@ -27,7 +27,7 @@ In this situation you have three options:
 
 1. Delete existing resources with `cf delete`, `cf delete-service`, `cf delete-route` or similar commands.
 2. Reconfigure existing [application quotas](#application-quotas) and redeploy.
-3. Request a quota change: contact us at <gov-uk-paas-support@digital.cabinet-office.gov.uk>.
+3. Request a quota change: contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 ### Application quotas
 

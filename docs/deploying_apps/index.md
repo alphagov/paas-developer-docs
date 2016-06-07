@@ -23,7 +23,7 @@ The `cf push` command is used both to create a new app and to push a new version
 
 The app should now be live at `https://APPNAME.cloudapps.digital`.
 
-For a production app, you should run at least two instances to improve availability.
+For a production app, you should run at least two instances to ensure availability.
 
 Increase the running instances to two using:
 
@@ -34,11 +34,18 @@ Increase the running instances to two using:
 * Instances will be restarted if they [exceed memory limits](/managing_apps/quotas/).
 * Proper [logging](/deploying_apps/logging/) might require special libraries/configuration for your app.
 
-## Setting environment variables
+## Environment variables
 
 All the configuration information for your app (for example, credentials for external services, or values that vary between each deployment such as canonical hostname) must be stored in environment variables, not in the code.
 
-To view current environment variables, run:
+There are two system-provided environment variables:
+
+* VCAP_SERVICES which provides details of any available backing services, such as PostgreSQL.
+* VCAP_APPLICATION which provides details of the currently running application.
+
+You can also create your own variables.
+
+To view current an app's current environment variables, run:
 
 ``cf env APPNAME``
 
