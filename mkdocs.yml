@@ -17,7 +17,6 @@ pages:
 #    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
 #    - 'Deploying Django': 'deploying_apps/deploying_django.md'
 #    - 'Deploying Node': 'deploying_apps/deploying_node_js.md'
-    - 'Using Travis CI': 'deploying_apps/travis_ci.md'
     - 'Logging': 'deploying_apps/logging.md'
     - 'Redirect All Traffic': 'deploying_apps/redirect_all_traffic.md'
 - Deploying Backing Services:
@@ -26,4 +25,5 @@ pages:
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
+    - 'Using Travis CI': 'managing_apps/travis_ci.md'
 copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.
