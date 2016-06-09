@@ -29,7 +29,7 @@ There are many options available when you ``push`` an app. You can optionally se
 
 For a production app, you should run at least two instances to ensure availability.
 
-Increase the running instances to two using:
+After deployment, you can increase the running instances to two using:
 
 ``cf scale APPNAME -i 2``
 
@@ -44,17 +44,17 @@ All the configuration information for your app (for example, credentials for ext
 
 There are two system-provided environment variables:
 
-* VCAP_SERVICES which provides details of any available backing services, such as PostgreSQL.
-* VCAP_APPLICATION which provides details of the currently running application.
+* VCAP_SERVICES which provides details of any available backing services, such as PostgreSQL, in JSON format.
+* VCAP_APPLICATION which provides details of the currently running application in JSON format.
 
-You can also create your own variables.
-
-To view an app's current environment variables, run:
+To view the app's current environment variables, run:
 
 ``cf env APPNAME``
 
-To set a new variable, use:
+You can also create your own environment variables specific to your app, or set the values of environment variables used by the app framework.
 
-``cf set-env APPNAME``
+To set or update a variable, use:
+
+``cf set-env APPNAME ENV_VAR_NAME ENV_VAR_VALUE``
 
 For more details, see Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
