@@ -15,8 +15,8 @@ pages:
     - 'Deploying a Static Site': 'deploying_apps/deploying_static_sites.md'
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
 #    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
-#    - 'Deploying Django': 'deploying_apps/deploying_django.md'
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'
+    - 'Deploying a Django App': 'deploying_apps/deploying_django.md'
     - 'Using Travis CI': 'deploying_apps/travis_ci.md'
     - 'Logging': 'deploying_apps/logging.md'
 - Deploying Backing Services:
