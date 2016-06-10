@@ -7,9 +7,6 @@ This section explains minimal steps for deploying a basic Rails app.
 
 These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-If you are just getting started learning CloudFoundry, you can use the sandbox space:
-
-``cf target -o sandbox``
 
 1. Check out your Rails app to a local folder.
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
@@ -42,6 +39,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
     where VARIABLE is a unique name for the variable, and `value` is the value to set.
 
 1. If your app requires a database, [create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). 
+    The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby DATABASE_URL accordingly.
 
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
