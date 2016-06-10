@@ -1,132 +1,109 @@
-### Ignoring files
+This section explains how to deploy an app using the Django framework. You may also need to refer to the [Cloud Foundry documentation about the Python buildpack](https://docs.cloudfoundry.org/buildpacks/python/index.html).
 
-1. Add `*.pyc` and `local_settings.py` to your `.gitignore`.
-1. [Exclude your `.gitignore`d files from Cloud Foundry.](/deploying_apps/excluding_files/)
+Note that the only database service currently supported by PaaS is PostgreSQL. If your Django app requires a database, it must be able to work with PostgreSQL.
 
-### The Python runtime
+These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-Next, you want to tell Cloud Foundry which Python runtime to use. To do this, create a `runtime.txt` file, and put the full version of Python you want to deploy with in it. For instance,
+If you are just getting started learning CloudFoundry, you can use the sandbox space by running: ``cf target -o sandbox``
 
-```
-python-3.4.1
-```
+1. Check out your Django app to a local folder.
 
-### `requirements.txt`
+2. Add `*.pyc` and `local_settings.py` to your `.gitignore`, file, then 
+   [exclude files ignored by Git](/deploying_apps/excluding_files/) so Cloud Foundry will ignore them too.
 
-There are a couple of packages used for the deploy that will be helpful. You'll want to add them to the `requirements.txt` for your project.
+3. Tell Cloud Foundry which Python runtime to use by creating a `runtime.txt`   file in the root of the local folder. The contents of the file should  
+   be:
 
-Below are the lines I added to my `requirements.txt` file. Later versions will probably work but haven't been tested.
+        python-3.5.1  
 
-```
-whitenoise==1.0.6  #manages static assets
-dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
-waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
-```
+    replacing "3.5.1" with the version of Python you want to use.
 
-### The `wsgi.py` file
+1. Generate a ``requirements.txt`` file if your project doesn't already have one by running ``pip freeze > requirements.txt`` in the root of the local folder.
+    Add the following lines to the ``requirements.txt`` file.
 
-When you create a Django project, a default `wsgi.py` file should be created for you. It usually looks like this:
+        whitenoise==1.0.6  #manages static assets
+        dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
+        waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
 
-```python
-"""
-WSGI config for PROJECTNAME project.
+4. Edit your `wsgi.py` file.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+    When you create a Django project, a default `wsgi.py` file should be created for you in the project folder. Excluding the opening comments, the default `wsgi.py` looks like this:
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
-"""
+        import os
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PROJECTNAME.settings")
 
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PROJECTNAME.settings")
+        from django.core.wsgi import get_wsgi_application
+        application = get_wsgi_application()
+        
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
-```
+    You'll need to add a few lines to import the `whitenoise` package and wrap the middleware around the WSGI application so that all static files are served using whitenoise. Edit your `wsgi.py` to:
 
-You'll need to add a few lines to import the `whitenoise` package and wrap the middleware around the wsgi application. This file will be used to start the wsgi server in your app. Instead of the above example, your wsgi.py should look like this:
+        import os
+        from django.core.wsgi import get_wsgi_application
 
-```python
-"""
-WSGI config for PROJECTNAME project.
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PROJECTNAME.settings")
+        # important that the whitenoise import is after the line above
+        from whitenoise.django import DjangoWhiteNoise
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+        application = get_wsgi_application()
+        application = DjangoWhiteNoise(application)
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
-"""
 
-import os
-from django.core.wsgi import get_wsgi_application
+    The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable must be set before importing `DjangoWhiteNoise`.
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PROJECTNAME.settings")
-# important that the whitenoise import is after the line above
-from whitenoise.django import DjangoWhiteNoise
+1. You should now tell Django where to look for static files. In `settings.py` within the project folder, add these lines below the ``import os`` statement.
 
-application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
-```
+        PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-The order here is important. The `DJANGO_SETTINGS_MODULE` environment variable must be set before importing `DjangoWhiteNoise`.
+        STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+        STATIC_URL = '/static/'
 
-### The Procfile
+    In this case, the STATIC_ROOT variable tells Django to look for static files in a directory called ``static`` inside the project folder, and the STATIC_URL variable sets the path where those files will be served.
 
-The Procfile contains commands that Cloud Foundry will run to keep your site up. For just the Django site, create a file called `Procfile` and in it put
+    You may need to alter these values depending on how static files are handled in your app.
 
-```
-web: waitress-serve --port=$PORT APPNAME.wsgi:application
-```
+    If your static files are located across multiple folders, you may need to use the STATICFILES_DIRS variable. See the Django documentation for [full details on managing static files](https://docs.djangoproject.com/en/1.9/howto/static-files/).
 
-`APPNAME.wsgi` should be replaced with whatever the name of your project wsgi module is.
+1. Create a file called `Procfile` in the root of your local folder, 
+   and put in it:
+    
+            web: waitress-serve --port=$PORT PROJECTNAME.wsgi:application
+        
+    `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable.
 
-### The `manifest.yml`
+1. Create a `manifest.yml` file in the root of your local folder.
 
-The [manifest file](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) tells `cf push` what to do with your app. Here's an example:
+        ---
+        memory: 512M
+        instances: 2
+        applications:
+        - name: my-app
 
-```yaml
----
-# all applications use these settings and services
-memory: 512M
-instances: 1
-applications:
-- name: APPNAME
-  path: .
-  timeout: 180
-```
+    where `my-app` is the name that will be used for the app within Government PaaS.
 
-As you can see, it specifies the number of instances, the memory allocated to the application, and the application itself.
+1. If your app requires a database, [create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). Then see the section on [PostgreSQL setup]() below.
 
-### Create the App
+1. To push your app, do:
 
-To create and deploy your app:
+    ``cf push APPNAME``
 
-```bash
-cf push APPNAME --no-start
-```
+    from the local folder.
 
-Normally, you would be able to view the site at `https://APPNAME.cloudapps.digital`, but we gave the command the `--no-start` flag. Before we start the app we need to set up the database.
+You can now view your app at `https://APPNAME.cloudapps.digital`.
 
-## Setting Up the Database
+## PostgreSQL setup 
 
-**First, read [the database guide](/apps/databases/).** If you are using RDS, you'll need to change your `settings.py ` and set one environment variable to get the database up and connect. In your `settings.py` make sure you import the package we added to the `requirements.txt` file above:
+In your `settings.py` file, make sure you import the package we added to the `requirements.txt` file above:
 
-```python
-import dj_database_url
-```
 
-Then, you'll need to add a `DATABASES` setting like normal. I recommend adding this to the `settings.py` file so that your `local_settings.py` file will override the settings when you're working locally.
+        import dj_database_url
 
-```python
-DATABASES = {}
-DATABASES['default'] =  dj_database_url.config()
-```
 
-### Running the app
+Then, you'll need to add a `DATABASES` setting. It's best to add this to the `settings.py` file. 
 
-Now try running the push command without the `--no-start` flag:
 
-```bash
-cf push APPNAME
-```
+        DATABASES = {}
+        DATABASES['default'] =  dj_database_url.config()
 
-It should now be running at `https://APPNAME.cloudapps.digital`!
+Your `local_settings.py` file will override this when you're working locally.
+
