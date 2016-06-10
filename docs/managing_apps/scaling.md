@@ -1,6 +1,12 @@
 The Cloud Foundry technology makes it easy to scale your application to meet increasing demand. Scaling does not happen automatically; you have to use the commands described below.
 
-Note that the maximum resources you can use will be limited by your organization quota.
+Note that the maximum resources you can use will be limited by your organization quotas. You can view them by running:
+
+``cf quotas``
+
+from the command line.
+
+If you are anticipating a spike in demand for a service hosted on the Government PaaS, please contact us well in advance at <gov-uk-paas-support@digital.cabinet-office.gov.uk>.
 
 ##Increasing instances
 
