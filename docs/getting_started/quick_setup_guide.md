@@ -7,7 +7,7 @@ If you are part of the private beta but don't have an account or if you’d like
 Government PaaS uses a hosting technology called Cloud Foundry. As a tenant, nearly all of your interactions with Government PaaS will be through the Cloud Foundry command line client. To get it set up:
 
 1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
-2. To check the installation, open the Terminal or Command Prompt and run:
+2. To check the installation, run:
 
     ```
     cf -v
