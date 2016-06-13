@@ -44,7 +44,9 @@ These steps assume you have already carried out the setup process explained in t
 
 The site should now be live at `https://APPNAME.cloudapps.digital`.
 
-Note that if the static content you want to serve is in a different folder to `manifest.yml`, you can add a `path` declaration to `manifest.yml` e.g. `path: dist` or `path: /site/assets`.
+NOTE: the `http://` version of the URL will not work. You must enter `https://`.
+
+If the static content you want to serve is in a different folder to `manifest.yml`, you can add a `path` declaration to `manifest.yml` e.g. `path: dist` or `path: /site/assets`.
 
 ##Adding more instances
 
