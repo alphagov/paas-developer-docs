@@ -1,10 +1,10 @@
 ## Getting an account
-PaaS is currently in private beta and aims to host its first applications in June 2016.
+Government PaaS is currently in private beta and aims to host its first applications in June 2016.
 
 If you are part of the private beta but don't have an account or if you’d like to be one of the early applications in the future, please contact us by emailing [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 ## Setting up the command line
-As a tenant, nearly all of your interactions with Cloud Foundry will be through the command line. To get it set up:
+Government PaaS uses a hosting technology called Cloud Foundry. As a tenant, nearly all of your interactions with Government PaaS will be through the Cloud Foundry command line client. To get it set up:
 
 1. [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
 2. Confirm the installation by running
