@@ -60,4 +60,4 @@ To practice deploying an app, try following the [deploying a static site](/deplo
 
 While you are learning to use the Cloud Foundry CLI, you may want to target the sandbox space when you deploy any test apps:
 
-``cf target -o sandbox``
+``cf target -s sandbox``
