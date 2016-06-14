@@ -19,8 +19,6 @@ These steps assume you have already carried out the setup process explained in t
 
 3. Include an npm ``package.json`` file to specify dependencies. The file should also specify a `start` command used to launch the app.
   
-    The presence of this file is essential to have the application detected as Node.js.
-
     This is an example of a minimal ``package.json`` file:
 
         
