@@ -4,7 +4,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
 These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-If you are just getting started learning CloudFoundry, you can use the sandbox space by running: ``cf target -o sandbox``
+If you are just getting started learning CloudFoundry, you can use the sandbox space by running: ``cf target -s sandbox``
 
 1. Check out your Django app to a local folder.
 
