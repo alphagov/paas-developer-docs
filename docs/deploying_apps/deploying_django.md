@@ -107,3 +107,8 @@ Then, you'll need to add a `DATABASES` setting. It's best to add this to the `se
 
 Your `local_settings.py` file will override this when you're working locally.
 
+To have database migrations automatically applied, amend your `Procfile` to contain the following:
+
+     web: python manage.py migrate && waitress-serve --port=$PORT PROJECTNAME.wsgi:application
+
+Again, remember to replace `PROJECTNAME` with the name of your WSGI module.
