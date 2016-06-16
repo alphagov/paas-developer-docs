@@ -35,26 +35,7 @@ After deployment, you can increase the running instances to two using:
 
 ## Caveats
 * Your app should not write to local storage. Cloud Foundry local storage is ephemeral and can be deleted at any time.
+* You may need to set environment variables for your app to work. All configuration information should be stored in environment variables, not in the code. 
 * Instances will be restarted if they [exceed memory limits](/managing_apps/quotas/).
 * Proper [logging](/deploying_apps/logging/) might require special libraries/configuration for your app.
 
-## Environment variables
-
-All the configuration information for your app (for example, credentials for external services, or values that vary between each deployment such as canonical hostname) must be stored in environment variables, not in the code.
-
-There are two system-provided environment variables:
-
-* VCAP_SERVICES which provides details of any available backing services, such as PostgreSQL, in JSON format.
-* VCAP_APPLICATION which provides details of the currently running application in JSON format.
-
-To view the app's current environment variables, run:
-
-``cf env APPNAME``
-
-You can also create your own environment variables specific to your app, or set the values of environment variables used by the app framework.
-
-To set or update a variable, use:
-
-``cf set-env APPNAME ENV_VAR_NAME ENV_VAR_VALUE``
-
-For more details, see Cloud Foundry's [documentation on environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).

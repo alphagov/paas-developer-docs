@@ -12,6 +12,7 @@ pages:
 - Deploying Apps:
     - 'Deployment Guide': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
+    - 'Setting Environment Variables': 'deploying_apps/setting_env.md'
     - 'Deploying a Static Site': 'deploying_apps/deploying_static_sites.md'
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
 #    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
