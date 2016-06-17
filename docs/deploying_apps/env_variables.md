@@ -24,14 +24,19 @@ then you should do the equivalent command with ``cf set-env``:
 
 ##System-provided environment variables
 
-There are two system-provided environment variables:
+There are two system-provided environment variables which contain information in JSON format.
 
-* VCAP_SERVICES which provides details of any available backing services, such as PostgreSQL, in JSON format.
-* VCAP_APPLICATION which provides details of the currently running application (for example, language runtime version) in JSON format.
+* VCAP_SERVICES contains details (including credentials) of any backing services bound to the app
+* VCAP_APPLICATION provides details of the currently running application (for example, language runtime version)
 
-If your app connects to a backing service, you may need to make it parse VCAP_SERVICES to get the credentials and other settings relating to that service and set the appropriate environment variables.
+To see the values of the system-provided variables, use:
 
-However, some buildpacks will do this for you automatically. See the deploy instructions for the language/framework you are using for details. 
+``cf env APPNAME``
+
+If your app connects to a backing service, you may need to have it parse VCAP_SERVICES to get the credentials and other settings relating to that service and set the appropriate environment variables.
+
+However, some buildpacks will do this for you automatically. See the deploy instructions for the language/framework you are using for details.
+
 
 ##Further reading
 
