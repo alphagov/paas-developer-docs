@@ -3,6 +3,8 @@ Government PaaS is currently in private beta and aims to host its first applicat
 
 If you are part of the private beta but don't have an account or if you’d like to be one of the early applications in the future, please contact us by emailing [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
+In order to provide you with an account, we need to store some personal data about you. Please see [our Privacy Policy](/getting_started/privacy) for details.
+
 ## Setting up the command line
 Government PaaS uses a hosting technology called Cloud Foundry. As a tenant, nearly all of your interactions with Government PaaS will be through the Cloud Foundry command line client. To get it set up:
 
