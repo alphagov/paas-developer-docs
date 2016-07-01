@@ -25,6 +25,5 @@ pages:
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
-    - 'Using Travis CI': 'managing_apps/travis_ci.md'
     - 'Redirecting All Traffic': 'managing_apps/redirect_all_traffic.md'
 copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.
