@@ -1,4 +1,6 @@
-This privacy policy relates to the data we store about you as a PaaS tenant. It does not relate to the privacy of the end users of any service you host on the PaaS: you are responsible for the data stored by your service.
+This privacy policy relates to the data we store about you as a Government PaaS tenant. It does not relate to the privacy of the end users of any service you host on the PaaS: you are responsible for the data stored by your service.
+
+If this privacy policy changes, all PaaS tenants will be notified.
 
 ## Introduction
 
