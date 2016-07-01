@@ -1,13 +1,14 @@
+This privacy policy relates to the data we store about you as a PaaS tenant. It does not relate to the privacy of the end users of any service you host on the PaaS: you are responsible for the data stored by your service.
 
 ## Introduction
 
-HMG Platform As A Service (PaaS) is provided by the Government Digital Service (GDS), which is part of the [Cabinet Office](https://www.gov.uk/government/organisations/cabinet-office). We use your personal data to provide you with access to PaaS systems, and to administer that access.
+Government Platform as a Service (PaaS) is provided by the Government Digital Service (GDS), which is part of the [Cabinet Office](https://www.gov.uk/government/organisations/cabinet-office). We use your personal data to provide you with access to PaaS systems, and to administer that access.
 
 This privacy policy explains the kinds of data that we process, how it’s used, how it’s stored, how it’s protected and how you can find out about it.
 
 ## The data we process
 
-We collect and process some data about you to provide you with access to PaaS systems, as part of your work on HMG services and products, that utilise the PaaS platform.
+We collect and process some data about you to provide you with access to PaaS systems, as part of your work on HMG services and products that utilise the PaaS platform.
 
 This data includes:
 
@@ -18,7 +19,7 @@ This data includes:
 
 ## How we use and share your data
 
-We use this information to create, and administer, user accounts with our platform.
+We use this information to create and administer user accounts with our platform.
 
 We don’t share this information with anyone else.
 
@@ -50,6 +51,6 @@ Additionally, we may pass on your data if we have a lawful reason to do so, for 
 
 You can [find out what information we hold about you](https://www.gov.uk/data-protection), and ask us not to use any of the information we collect.
 
-You can email us on gov-uk-paas-support@digital.cabinet-office.gov.uk . You’ll get a confirmation within 5 working days that we have received your complaint and a full answer within 20 working days. We will inform you if there’s going to be a delay.
+You can email us on [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). You’ll get a confirmation within 5 working days that we have received your complaint, and a full answer within 20 working days. We will inform you if there’s going to be a delay.
 
 If you’re unhappy with the answer you receive, or need any advice regarding the use of your personal data, you can contact the Information Commissioner’s Office (ICO), [https://ico.org.uk/](https://ico.org.uk/).
