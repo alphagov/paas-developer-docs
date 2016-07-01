@@ -9,6 +9,7 @@ pages:
 - Getting Started:
     - 'PaaS Requirements': 'getting_started/before_you_start.md'
     - 'Quick Setup Guide': 'getting_started/quick_setup_guide.md'
+    - 'Privacy Policy': 'getting_started/privacy.md'
 - Deploying Apps:
     - 'Deployment Guide': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
