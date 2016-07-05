@@ -1,12 +1,18 @@
 
-For full details of how to deploy Ruby on Rails apps, see the official Cloud Foundry guide [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). 
+This section explains minimal steps for deploying a basic Rails app. For full details of how to deploy Ruby on Rails apps, see the official Cloud Foundry guide [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). 
 
-Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL.
-
-This section explains minimal steps for deploying a basic Rails app.
 
 These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
+When you deploy an app, you must select a combination of an organisation and a space (see [Orgs and spaces](/deploying_apps/orgs_spaces_targets) for more information). This is called the **target**.
+
+We have provided a ``sandbox`` space for you to use for learning about the PaaS. You may want to target the sandbox while you are testing by running:
+
+``cf target -s sandbox``
+
+It's also important to realise that if you deploy an app using the same name and target as an existing app, the original will be replaced. If you are not sure about where to deploy your app, consult the rest of your team.
+
+Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL.
 
 1. Check out your Rails app to a local folder.
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
@@ -19,6 +25,11 @@ These steps assume you have already carried out the setup process explained in t
           memory: 256M
           buildpack: ruby_buildpack
 
+    Replace ``my-rails-app`` with a unique name for your app. (You can use ``cf apps`` to see apps which already exist).
+
+    The `memory` line tells the PaaS how much memory to allocate to the app.
+
+    A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Ruby, you use the ``ruby_buildpack``.
 
 1. Create the application using Cloud Foundry:
 

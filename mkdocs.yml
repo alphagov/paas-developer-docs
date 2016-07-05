@@ -14,17 +14,18 @@ pages:
     - 'Deployment Guide': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
     - 'Environment Variables': 'deploying_apps/env_variables.md'
+    - 'Orgs, Spaces and Targets': 'deploying_apps/orgs_spaces_targets.md'
     - 'Deploying a Static Site': 'deploying_apps/deploying_static_sites.md'
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
 #    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'
     - 'Deploying a Django App': 'deploying_apps/deploying_django.md'
-    - 'Logging': 'deploying_apps/logging.md'
 - Deploying Backing Services:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
+    - 'Logging': 'managing_apps/logging.md'
     - 'Redirecting All Traffic': 'managing_apps/redirect_all_traffic.md'
 copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.

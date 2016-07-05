@@ -74,12 +74,15 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 1. Create a `manifest.yml` file in the root of your local folder.
 
         ---
-        memory: 512M
-        instances: 2
         applications:
         - name: my-app
+          memory: 512M
 
-    where `my-app` is the name that will be used for the app within Government PaaS.
+    where `my-django-app` is the name that will be used for the app within Government PaaS.
+
+    Replace ``my-django-app`` with a unique name for your app. (You can use ``cf apps`` to see apps which already exist).
+
+    The `memory` line tells the PaaS how much memory to allocate to the app.
 
 1. If your app requires a database, [create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). Then see the section on [PostgreSQL setup]() below.
 

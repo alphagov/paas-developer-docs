@@ -30,17 +30,13 @@ This is the code for the example app we are going to use. It is a basic web serv
           memory: 256M
           buildpack: nodejs_buildpack
 
-    The ``name`` value sets the name for the app within the Government PaaS. You'll use this name to apply further Cloud Foundry commands to the app: for example, if you want to stop it.
+    Replace ``my-node-app`` with a unique name for your app. (You can use ``cf apps`` to see apps which already exist).
 
-    The ``command`` value is the command that will be used to start the app after it is uploaded. Make sure that the filename used in the command matches the filename you used to save your app in the previous step.
+    The `memory` line tells the PaaS how much memory to allocate to the app.
 
-    The ``memory`` value specifies how much memory will be allocated to the app.
+    A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Node.js, you use the ``nodejs_buildpack``.
 
-    A buildpack provides the framework and runtime support required by an app. In this case, we specify ``nodejs_buildpack`` because we're using a Node.js app.
-
-    See [Deploying with Application Manifests](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) on the Cloud Foundry site for more details about what you can specify in the manifest file.
-
-1. Create an npm ``package.json`` file in the same directory. 
+3. Include an npm ``package.json`` file to specify dependencies. The file should also specify a `start` command used to launch the app.
   
     This is a ``package.json`` file for our example app:
 
@@ -60,7 +56,6 @@ This is the code for the example app we are going to use. It is a basic web serv
 1. Run `cf push` to upload and start the app.
 
 See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
-
 
 ##Node.js and backing services
 
