@@ -59,7 +59,7 @@ This is the code for the example app we are going to use. It is a basic web serv
 1. You can optionally run `npm install` to preinstall dependencies rather than having them added during the PaaS staging process.
 1. Run `cf push` to upload and start the app.
 
-Please refer to [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for further information.
+See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
 
 
 ##Node.js and backing services
