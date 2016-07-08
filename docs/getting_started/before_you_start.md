@@ -1,6 +1,6 @@
 To be hosted by Government PaaS, your application must:
 
-* follow the [twelve-factor application](http://12factor.net/) principles
+* follow the [twelve-factor application](http://12factor.net/) principles (described in more detail below) - this will be the case if your app was written to be deployed to another PaaS like Heroku
 * not require any backing service apart from a database (currently the only service available is PostgreSQL)
 * not carry data at SECRET or above (this is currently out of scope for Government PaaS)
 * be written in a language supported by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/):

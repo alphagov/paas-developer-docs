@@ -2,46 +2,64 @@ This section covers how to deploy a basic Node.js application to Government PaaS
 
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Node.js app requires a database, it must be able to work with PostgreSQL.
 
-Your app will need to parse the ``VCAP_SERVICES`` environment variable to get details of any backing services, such as PostgreSQL. See the section [Node.js and backing services](#nodejs-and-backing-services) below.
+These instructions assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
 
-These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
+This is the code for the example app we are going to use. It is a basic web server that responds with a 'Hello World' message.
 
+    const http = require('http');
 
-1. Check out your Node.js app to a local folder.
-2. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
-3. Create a ``manifest.yml`` file:
+    const port = process.env.PORT || 3000;
+
+    const server = http.createServer((req, res) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Hello World\n');
+    });
+
+    server.listen(port, () => {
+      console.log(`Server running on ${port}/`);
+    });
+
+1. Save the code to a new local directory as ``example.js``.
+1. Add this ``manifest.yml`` file to the same directory:
 
         ---
         applications:
         - name: my-node-app
+          command: node example.js
           memory: 256M
           buildpack: nodejs_buildpack
 
-3. Include an npm ``package.json`` file to specify dependencies. The file should also specify a `start` command used to launch the app.
-  
-    This is an example of a minimal ``package.json`` file:
+    The ``name`` value sets the name for the app within the Government PaaS. You'll use this name to apply further Cloud Foundry commands to the app: for example, if you want to stop it.
 
-        
+    The ``command`` value is the command that will be used to start the app after it is uploaded. Make sure that the filename used in the command matches the filename you used to save your app in the previous step.
+
+    The ``memory`` value specifies how much memory will be allocated to the app.
+
+    A buildpack provides the framework and runtime support required by an app. In this case, we specify ``nodejs_buildpack`` because we're using a Node.js app.
+
+    See [Deploying with Application Manifests](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) on the Cloud Foundry site for more details about what you can specify in the manifest file.
+
+1. Create an npm ``package.json`` file in the same directory. 
+  
+    This is a ``package.json`` file for our example app:
+
         {
-          "name": "my-node-app",
+          "name": "example",
           "version": "0.0.1",
           "author": "Demo",
-          "scripts": {
-            "start": "node my-node-app.js"
+          "engines": {
+            "node": "6.1.0",
+            "npm": "2.7.4"
           }
         }
 
-    Note that you can use a ``command:`` key in ``manifest.yml`` to specify the command to start your application, but this is not recommended because the functionality [may be removed](https://github.com/cloudfoundry/nodejs-buildpack/pull/11#issuecomment-67666273). 
+    The ``"engines"`` values specify the versions of Node.js and npm that the PaaS should use to run your app. Note that older versions may not be available: if your version is not supported, you will see an error message when you try to upload and start the app.
 
-4. Ensure the app listens on the Cloud Foundry assigned port by using the [cfenv](https://www.npmjs.com/package/cfenv) module to retrieve information from the ``VCAP_APPLICATION`` environment variable.
+1. You can optionally run `npm install` to preinstall dependencies rather than having them added during the PaaS staging process.
+1. Run `cf push` to upload and start the app.
 
-
-        var cfenv = require("cfenv");
-        var appEnv = cfenv.getAppEnv();
-        config.app.port = appEnv.port;
-
-
-5. You can optionally run `npm install` prior to `cf push` to preinstall dependencies rather than having them added during staging.
+See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
 
 
 ##Node.js and backing services
@@ -50,7 +68,7 @@ If your app depends on [backing services](/deploying_services/) such as PostgreS
 
 You must create the service and bind it to your Node.js app as described in the [Deploying Services](/deploying_services/) section.
 
-We recommend you use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the environment variables.
+You can use the [cfenv](https://www.npmjs.com/package/cfenv) module to assist with parsing the environment variables.
 
 In your ``package.json`` file, you would specify ``cfenv`` as a dependency:
 
