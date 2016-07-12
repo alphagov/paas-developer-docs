@@ -32,8 +32,8 @@ These steps assume you have already carried out the setup process explained in t
         ---
         applications:
         - name: my-static-site
-        memory: 64M
-        buildpack: staticfile_buildpack
+          memory: 64M
+          buildpack: staticfile_buildpack
     
     Replace ``my-static-site`` with a unique name for your app. (You can use ``cf apps`` to see apps which already exist).
 
