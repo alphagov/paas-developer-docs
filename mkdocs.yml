@@ -17,7 +17,6 @@ pages:
     - 'Orgs, Spaces and Targets': 'deploying_apps/orgs_spaces_targets.md'
     - 'Deploying a Static Site': 'deploying_apps/deploying_static_sites.md'
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
-#    - 'Deploying Flask': 'deploying_apps/deploying_flask.md'
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'
     - 'Deploying a Django App': 'deploying_apps/deploying_django.md'
 - Deploying Backing Services:
