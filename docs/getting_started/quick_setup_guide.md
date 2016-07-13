@@ -35,7 +35,11 @@ Government PaaS uses a hosting technology called Cloud Foundry. As a tenant (tha
 
     You will then be prompted to enter your password, which should have been sent to you by email (subject "Welcome to the Government PaaS").
 
-    For security, you should now change your password using ``cf passwd``.
+4. **It's important for security that you now change your password**. Run:
+
+     ``cf passwd``
+
+    You will be prompted to enter your password from the previous step. You can then choose a new password.
 
 Once logged in, you can see the available commands by running ```cf```.
 
