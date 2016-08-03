@@ -7,7 +7,6 @@ To be hosted by Government PaaS, your application must:
     * Go
     * Nodejs
     * Java
-    * Python
     * PHP
     * Python
     * Ruby
