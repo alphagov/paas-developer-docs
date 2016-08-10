@@ -15,8 +15,11 @@ We collect and process some data about you to provide you with access to PaaS sy
 This data includes:
 
 + your name - so we know who is using the account
+
 + your email address - which allows us to contact you about your account
+
 + your mobile telephone number - which allows us to contact you about your account, and in future, support multi-factor authentication
+
 + your organisational role - which allows us to understand what you do, and what access you should have
 
 ## How we use and share your data

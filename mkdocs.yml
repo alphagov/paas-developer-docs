@@ -10,6 +10,7 @@ pages:
     - 'PaaS Requirements': 'getting_started/before_you_start.md'
     - 'Quick Setup Guide': 'getting_started/quick_setup_guide.md'
     - 'Privacy Policy': 'getting_started/privacy.md'
+    - 'Limitations': 'getting_started/limitations.md'
 - Deploying Apps:
     - 'Deployment Guide': 'deploying_apps/index.md'
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
@@ -19,7 +20,7 @@ pages:
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'
     - 'Deploying a Django App': 'deploying_apps/deploying_django.md'
-    - 'Limitations': 'deploying_apps/limitations.md'
+    - 'Production Checklist': 'deploying_apps/production_checklist.md'
 - Deploying Backing Services:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'
