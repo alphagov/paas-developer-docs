@@ -15,8 +15,11 @@ It's also important to realise that if you deploy an app using the same name and
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL.
 
 1. Check out your Rails app to a local folder.
+
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
+
 1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
+
 1. Create a manifest.yml file in the folder where you checked out your app.
 
         ---

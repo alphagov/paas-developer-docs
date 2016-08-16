@@ -21,6 +21,7 @@ This is the code for the example app we are going to use. It is a basic web serv
     });
 
 1. Save the code to a new local directory as ``example.js``.
+
 1. Add this ``manifest.yml`` file to the same directory:
 
         ---
@@ -53,6 +54,7 @@ This is the code for the example app we are going to use. It is a basic web serv
     The ``"engines"`` values specify the versions of Node.js and npm that the PaaS should use to run your app. Note that older versions may not be available: if your version is not supported, you will see an error message when you try to upload and start the app.
 
 1. You can optionally run `npm install` to preinstall dependencies rather than having them added during the PaaS staging process.
+
 1. Run `cf push` to upload and start the app.
 
 See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
