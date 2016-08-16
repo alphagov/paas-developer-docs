@@ -16,6 +16,14 @@ The Cloud Foundry command line client has an option to enable you to connect dir
 
 This functionality is currently disabled on the Government PaaS. We intend to make it available in future, following security testing.
 
+## 404s after push or restart
+
+After you use ``cf push`` or ``cf restart``, your app may briefly return incorrect 404 errors. Apart from the brief downtime, this may lead to problems if the 404 is cached, or visiting web crawling bots (as used by search engines) receive a 404.
+
+We are working on a fix to prevent this happening.
+
+In the meantime, we suggest that you use a [blue-green deployment process](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html), where you have two versions of an app, one that is 'live' and one that is undergoing an update or restart. There are plugins for the Cloud Foundry command line client to facilitate this process. We haven't evaluated the available plugins in enough detail to recommend one, but some tenants have successfully used [autopilot](https://github.com/contraband/autopilot).
+
 ## API access may have brief outages during beta
 
 During the beta period, there may be occasional brief periods where API access is unavailable during a platform update, causing commands sent from the command line client to fail. 
