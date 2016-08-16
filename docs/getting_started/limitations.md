@@ -10,6 +10,12 @@ If you want to use a custom buildpack because you need a newer version of a runt
 
 If you'd like to use custom buildpacks, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
+## Direct SSH access is currently disabled
+
+The Cloud Foundry command line client has an option to enable you to connect directly to the virtual machines on which your apps run using ``cf ssh``. (See the [Cloud Foundry documentation on accessing apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html).
+
+This functionality is currently disabled on the Government PaaS. We intend to make it available in future, following security testing.
+
 ## API access may have brief outages during beta
 
 During the beta period, there may be occasional brief periods where API access is unavailable during a platform update, causing commands sent from the command line client to fail. 
