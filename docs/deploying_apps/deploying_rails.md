@@ -65,8 +65,10 @@ You can add another instance of your app by running:
 
 ## Web servers
 
-By default, the Cloud Foundry buildpack for Rails 4 [runs `bin/rails server`][cf-buildpack-rails] to
-spin up the application, which will use WEBrick as a server.
+By default, the Cloud Foundry ruby buildpack [runs `bin/rails server`][cf-buildpack-rails]
+to spin up the application. In rails 4 and below this will use WEBrick as a
+server. [In rails 5 and above the default is
+puma](http://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server).
 
 You may want to use a different server in production. The Cloud Foundry docs have
 [more information on configuring a production server][cf-docs-prodserver]
