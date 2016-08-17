@@ -63,6 +63,19 @@ You can add another instance of your app by running:
 
 ``cf scale APPNAME -i 2``
 
+## Web servers
+
+By default, the Cloud Foundry ruby buildpack [runs `bin/rails server`][cf-buildpack-rails]
+to spin up the application. In rails 4 and below this will use WEBrick as a
+server. [In rails 5 and above the default is
+puma](http://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server).
+
+You may want to use a different server in production. The Cloud Foundry docs have
+[more information on configuring a production server][cf-docs-prodserver]
+
+[cf-buildpack-rails]: https://github.com/cloudfoundry/ruby-buildpack/blob/1f0ac3ce10866390d161c3f27e71d64890859454/lib/language_pack/rails4.rb#L27
+[cf-docs-prodserver]: https://docs.cloudfoundry.org/buildpacks/prod-server.html
+
 ## Troubleshooting asset precompilation
 
 By default, the Rails buildpack performs asset precompilation during the staging phase. This is fine for
