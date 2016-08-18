@@ -16,9 +16,15 @@ The Cloud Foundry command line client has an option to enable you to connect dir
 
 This functionality is currently disabled on the Government PaaS. We intend to make it available in future, following security testing.
 
-## 404s after push or restart
+## 404s after commands that restart the app
 
-After you use ``cf push`` or ``cf restart``, your app may briefly return incorrect 404 errors. Apart from the brief downtime, this may lead to problems if the 404 is cached, or visiting web crawling bots (as used by search engines) receive a 404.
+After you use a command that restarts application instances, such as ``cf push`` or ``cf restart``, your app may briefly return incorrect 404 errors. Apart from the brief downtime, this may lead to problems if the 404 is cached, or visiting web crawling bots (as used by search engines) receive a 404.
+
+Commands known to do this are:
+- ``cf push``
+- ``cf restage``
+- ``cf restart``
+- ``cf scale`` when changing disk or memory limits or forcing a restart
 
 We are working on a fix to prevent this happening.
 
