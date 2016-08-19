@@ -8,6 +8,8 @@ Currently, Government PaaS offers a ``postgres`` service which is available with
 * ``M-dedicated-9.5``
 * ``M-HA-dedicated-9.5`` (high availability, recommended for production)
 
+``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
+
 
 To create a service and bind it to your app:
 
@@ -36,9 +38,6 @@ To create a service and bind it to your app:
     where SERVICE is the service you want, PLAN is the plan you want, and SERVICE_INSTANCE is a unique, descriptive name for this instance of the service.
 
     Note that for a production service, we strongly recommend you select the high-availability plan (``M-HA-dedicated-9.5``).
-
-    Paid services may need to be enabled on your account; if you receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
-
 
 3. It may take some time for the service instance to be set up. To find out its status, run:  
 
