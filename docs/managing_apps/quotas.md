@@ -10,9 +10,15 @@ Your quota sets the following:
 
 + **Service instances**: The number of service instances available to your organization. 
 
-+ **Paid services**: Whether or not paid services are available. ``postgres`` is a paid service.
++ **Paid services**: Whether or not paid [services](/deploying_services/) are available. ``postgres`` is a paid service.
 
 + **Routes**: The number of routes available to your applications (hostname and domain pairs where an application that exposes a listening port can be reached).
+
+To see your organisation quota, run the command:
+
+``cf org YOURORG``
+
+where YOURORG is your organisation's name. (If you don't know the name, you can use ``cf orgs`` to find out).
 
 ## Quota limits
 
