@@ -8,6 +8,8 @@ Currently, Government PaaS offers a ``postgres`` service which is available with
 * ``M-dedicated-9.5``
 * ``M-HA-dedicated-9.5`` (high availability, recommended for production)
 
+The number in the plan name (in this case, ``9.5``) is the PostgreSQL version.
+
 ``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 
