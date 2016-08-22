@@ -62,3 +62,15 @@ Your app will need to parse the ``VCAP_SERVICES`` [environment variable](/deploy
 Use ``cf env APPNAME`` to see the environment variables.
 
 You can check for database connection errors by viewing the recent logs with ``cf logs APPNAME --recent``.
+
+## PostgreSQL service maintenance times
+
+The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Each PostgreSQL service you create will have a randomly-assigned weekly 30 minute maintenance window, during which there may be brief downtime. (To minimise downtime, select the ``M-HA-dedicated-9.5`` high availability plan). Minor version upgrades (for example from 9.4.1 to 9.4.2) will be applied during this window.
+
+For more details, see the [Amazon RDS Maintenance documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) [external page].
+
+If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk). We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
+
+
+
+
