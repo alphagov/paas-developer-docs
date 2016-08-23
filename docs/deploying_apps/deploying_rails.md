@@ -34,16 +34,6 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
     A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Ruby, you use the ``ruby_buildpack``.
 
-1. Create the application using Cloud Foundry:
-
-    ```
-    cf push  
-    ```
-
-    from the folder where you checked out your app.
-
-    If you do not specify a name for the app after the ``cf push`` command, the name from the manifest file is used.
-
 1. Set any additional [environment variables](//deploying_apps/#setting-environment-variables/) required by your app. For example:
 
     ```
@@ -52,8 +42,30 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
     where VARIABLE is a unique name for the variable, and `value` is the value to set.
 
-1. If your app requires a database, [create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). 
+1. If your app does not need a backing service like PostgreSQL, upload and start the application:
+
+    ```
+    cf push APPNAME
+    ```
+
+    from the folder where you checked out your app.
+
+    If you do not specify a name for the app after the ``cf push`` command, the name from the manifest file is used.
+
+    If your app needs a backing service, upload it but do not start it:
+
+    ```
+    cf push --no-start APPNAME
+    ```
+
+    [Create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). 
     The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby DATABASE_URL accordingly.
+
+    Once you have created and bound the PostgreSQL service, run:
+
+    ```
+    cf start APPNAME
+    ```
 
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 

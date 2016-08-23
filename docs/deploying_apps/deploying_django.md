@@ -92,9 +92,11 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 
     from the local folder.
 
+    If you want to upload the app without starting it (for example, if you need to create a PostgreSQL service), run `cf push --no-start APPNAME`, then when you are ready to start the app, run `cf start APPNAME`.
+
 You can now view your app at `https://APPNAME.cloudapps.digital`.
 
-## PostgreSQL setup 
+## PostgreSQL setup with Django
 
 In your `settings.py` file, make sure you import the package we added to the `requirements.txt` file above:
 

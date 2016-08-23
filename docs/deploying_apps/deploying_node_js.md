@@ -55,11 +55,11 @@ This is the code for the example app we are going to use. It is a basic web serv
 
 1. You can optionally run `npm install` to preinstall dependencies rather than having them added during the PaaS staging process.
 
-1. Run `cf push` to upload and start the app.
+1. Run `cf push APPNAME` to upload and start the app. If you want to upload the app without starting it (for example, if you need to create a PostgreSQL service), run `cf push --no-start APPNAME`, then when you are ready to start the app, run `cf start APPNAME`.
 
 See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
 
-##Node.js and backing services
+##PostgreSQL setup with Node.js
 
 If your app depends on [backing services](/deploying_services/) such as PostgreSQL, it will need to parse the `VCAP_SERVICES` environment variable to get required details, such as service URLs and credentials.
 
@@ -81,11 +81,12 @@ In your ``package.json`` file, you would specify ``cfenv`` as a dependency:
 Then in your app, you can easily get configuration information for backing services. This is an example of how to connect to a PostgreSQL service.
 
         var cfenv = require("cfenv");
+        var pg = require('pg');
         var appEnv = cfenv.getAppEnv();
-        var connectionString = appEnv.getServiceURL("my-postgres");
+        var connectionString = appEnv.getServiceURL(/.*/);
         var client = new pg.Client(connectionString);
+        client.ssl = true;
         client.connect();
-  
 
 Note that in the above you should replace "my-postgres" with the exact name of the PostgreSQL service you created. The ``getServiceURL`` function returns a connection string which includes the username and password required to connect to the database.
 

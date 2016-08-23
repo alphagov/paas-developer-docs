@@ -37,21 +37,49 @@ To create a service and bind it to your app:
 
     ``cf create-service SERVICE PLAN SERVICE_INSTANCE``
 
-    where SERVICE is the service you want, PLAN is the plan you want, and SERVICE_INSTANCE is a unique, descriptive name for this instance of the service.
+    where SERVICE is the service you want, PLAN is the plan you want, and SERVICE_INSTANCE is a unique, descriptive name for this instance of the service; for example:
+
+    ``cf create-service postgres M-dedicated-9.5 my-pg-service``
 
     Note that for a production service, we strongly recommend you select the high-availability plan (``M-HA-dedicated-9.5``).
 
-3. It may take some time for the service instance to be set up. To find out its status, run:  
+3. It may take some time (5 to 10 minutes) for the service instance to be set up. To find out its status, run:  
 
-      ``cf service SERVICE_INSTANCE ``
+    ``cf service SERVICE_INSTANCE``
 
-4. Wait until the service status is 'available'. You can now bind the PostgreSQL service to your app. Run:
+    for example:
+
+    ``cf service my-pg-service``
+
+4. Wait until the service status reported by the above command is 'create succeeded'. Here is an example of the type of output you will see once the service is created:
+
+        
+        Service instance: my-pg-service
+        Service: postgres
+        Bound apps:
+        Tags:
+        Plan: M-dedicated-9.5
+        Description: AWS RDS PostgreSQL service
+        Documentation url: https://aws.amazon.com/documentation/rds/
+        Dashboard:
+
+        Last Operation
+        Status: create succeeded
+        Message: DB Instance 'rdsbroker-9f053413-97a5-461f-aa41-fe6e29db323e' status is 'available'
+        Started: 2016-08-23T15:34:41Z
+        Updated: 2016-08-23T15:42:02Z
+        
+
+
+5. You can now bind the PostgreSQL service to your app. Run:
 
     ``cf bind-service APPLICATION SERVICE_INSTANCE``
 
-    where APPLICATION is the name of a deployed instance of your application (exactly as specified in your manifest or push command).
+    where APPLICATION is the name of a deployed instance of your application (exactly as specified in your manifest or push command), for example:
 
-5. Your app should now able to access the PostgreSQL service. You may need to restart the app to connect.
+    ``cf bind-service my-app my-pg-service``
+
+5. Your app should now able to access the PostgreSQL service. If the app was already running, you may need to restart the app to connect.
 
 
 ## Accessing PostgreSQL from your app
@@ -60,7 +88,7 @@ Your app must make a [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Securit
 
 Your app will need to parse the ``VCAP_SERVICES`` [environment variable](/deploying_apps/#environment-variables) to get details of the PostgreSQL service (or use a library that does so).
 
-(Note that if your app is written in Ruby, the Cloud Foundry Ruby buildpack will automatically parse ``VCAP_SERVICES`` and set DATABASE_URL to the first database found.)
+(Note that for some languages/frameworks, the Cloud Foundry Ruby buildpack will automatically parse ``VCAP_SERVICES`` and set DATABASE_URL to the first database found.)
 
 Use ``cf env APPNAME`` to see the environment variables.
 
@@ -76,7 +104,7 @@ For more details, see the [Amazon RDS Maintenance documentation](http://docs.aws
 
 If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk). Times will be from 22:00 to 06:00 UTC. We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
 
-## PostgreSQL backup
+## PostgreSQL service backup
 
 The data stored within any PostgreSQL service you create is backed up using the standard Amazon RDS backup system. 
 
