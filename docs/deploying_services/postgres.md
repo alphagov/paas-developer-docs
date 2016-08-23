@@ -66,14 +66,27 @@ Use ``cf env APPNAME`` to see the environment variables.
 
 You can check for database connection errors by viewing the recent logs with ``cf logs APPNAME --recent``.
 
+
+
 ## PostgreSQL service maintenance times
 
 The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Each PostgreSQL service you create will have a randomly-assigned weekly 30 minute maintenance window, during which there may be brief downtime. (To minimise downtime, select the ``M-HA-dedicated-9.5`` high availability plan). Minor version upgrades (for example from 9.4.1 to 9.4.2) will be applied during this window.
 
 For more details, see the [Amazon RDS Maintenance documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) [external page].
 
-If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk). We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
+If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk). Times will be from 22:00 to 06:00 UTC. We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
 
+## PostgreSQL backup
 
+The data stored within any PostgreSQL service you create is backed up using the standard Amazon RDS backup system. 
 
+Backups are taken nightly and data is retained for 7 days.
+
+If you need to restore data to an earlier state, we can restore to any point from 5 minutes to 7 days ago, with a resolution of one second. Data can be restored to a new PostgreSQL service instance running in parallel, or it can replace the existing service instance.
+
+Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange the restore process or if you need further information about the backup process. We will need approval from your organization manager if restoring will involve overwriting data.
+
+Note that data restore will not be available in the event of an RDS outage affecting the entire Amazon availability zone.
+
+For more details about how the RDS backup system works, see [Amazon's DB Instance Backups documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html) [external page].
 
