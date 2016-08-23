@@ -45,17 +45,18 @@ To create a service and bind it to your app:
 
       ``cf service SERVICE_INSTANCE ``
 
-
 4. Wait until the service status is 'available'. You can now bind the PostgreSQL service to your app. Run:
 
     ``cf bind-service APPLICATION SERVICE_INSTANCE``
 
     where APPLICATION is the name of a deployed instance of your application (exactly as specified in your manifest or push command).
 
-5. Your app is now able to access the PostgreSQL service.
+5. Your app should now able to access the PostgreSQL service. You may need to restart the app to connect.
 
 
 ## Accessing PostgreSQL from your app
+
+Your app must make a [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) connection to the PostgreSQL service. Most libraries use TLS by default.
 
 Your app will need to parse the ``VCAP_SERVICES`` [environment variable](/deploying_apps/#environment-variables) to get details of the PostgreSQL service (or use a library that does so).
 
