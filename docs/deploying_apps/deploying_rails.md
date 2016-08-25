@@ -34,7 +34,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
     A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Ruby, you use the ``ruby_buildpack``.
 
-1. Set any additional [environment variables](//deploying_apps/#setting-environment-variables/) required by your app. For example:
+1. Set any additional [environment variables](/deploying_apps/env_variables/) required by your app. For example:
 
     ```
     cf set-env APPNAME VARIABLE `value`
@@ -83,7 +83,7 @@ server. In Rails 5 and above, the default is
 [puma](http://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server).
 
 You may want to use a different web server in production. See the Cloud Foundry docs for
-[more information on configuring a production server](https://docs.cloudfoundry.org/buildpacks/prod-server.html) [external link].
+[more information on configuring a production server](https://docs.cloudfoundry.org/buildpacks/prod-server.html).
 
 
 ## Troubleshooting asset precompilation

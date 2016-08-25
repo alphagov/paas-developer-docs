@@ -43,15 +43,15 @@ As a PaaS tenant, you can divide your organization's quota capacity amongst your
 
 Use the following commands to set application quota options:
 
-+ `memory: / -m`
++ `memory:` / `-m`
 
-	Your application's memory limit. An application's compute limit is derived from its memory limit (see below).
+	Your application's memory limit. An application's compute limit is derived from its memory limit (see [below](#memory-share-and-compute-share)).
 
-+ `disk_quota / -k`
++ `disk_quota:` / `-k`
 
 	The maximum amount of disk space available to your app.
 
-+ `instances: / -i`
++ `instances:` / `-i`
 
 	Sets the number of application instances to launch. Each additional instance receives the same memory and disk reservation. An application with a manifest specifying `memory: 256M` and `instances: 4` would reserve 1GB (256M x 4) total.
 
