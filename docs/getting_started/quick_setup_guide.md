@@ -23,7 +23,7 @@ Government PaaS uses a hosting technology called Cloud Foundry. As a tenant (tha
     cf version 6.18.1+a1103f0-2016-05-24
     ```
 
-    *Note:* depending on your network configuration you might need to [set an ```HTTP_PROXY``` environment variable](https://docs.cloudfoundry.org/cf-cli/http-proxy.html) for the CLI to connect. Contact your network administrators to work out the correct settings for your configuration.  
+    *Note:* depending on your network configuration you might need to [set an ```HTTP_PROXY``` environment variable](https://docs.cloudfoundry.org/cf-cli/http-proxy.html) [external link] for the CLI to connect. Contact your network administrators to work out the correct settings for your configuration.  
 
 3. Log in by running:
 

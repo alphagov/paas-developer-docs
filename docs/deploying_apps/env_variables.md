@@ -40,4 +40,4 @@ However, some buildpacks will do this for you automatically. See the deploy inst
 
 ##Further reading
 
-For more information, see Cloud Foundry's [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html) documentation.
+For more information, see Cloud Foundry's [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html) [external link] documentation.

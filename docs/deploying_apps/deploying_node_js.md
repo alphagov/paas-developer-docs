@@ -1,4 +1,4 @@
-This section covers how to deploy a basic Node.js application to Government PaaS. See the Cloud Foundry [Tips for Node.js Applications](http://docs.cloudfoundry.org/buildpacks/node/node-tips.html) for more details.
+This section covers how to deploy a basic Node.js application to Government PaaS. See the Cloud Foundry [Tips for Node.js Applications](http://docs.cloudfoundry.org/buildpacks/node/node-tips.html) [external link] for more details.
 
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Node.js app requires a database, it must be able to work with PostgreSQL.
 
@@ -57,7 +57,7 @@ This is the code for the example app we are going to use. It is a basic web serv
 
 1. Run `cf push APPNAME` to upload and start the app. If you want to upload the app without starting it (for example, if you need to create a PostgreSQL service), run `cf push --no-start APPNAME`, then when you are ready to start the app, run `cf start APPNAME`.
 
-See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) in the Cloud Foundry documentation for more information.
+See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) [external link] in the Cloud Foundry documentation for more information.
 
 ##PostgreSQL setup with Node.js
 

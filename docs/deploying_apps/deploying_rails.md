@@ -1,5 +1,5 @@
 
-This section explains minimal steps for deploying a basic Rails app. For full details of how to deploy Ruby on Rails apps, see the official Cloud Foundry guide [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html). 
+This section explains minimal steps for deploying a basic Rails app. For full details of how to deploy Ruby on Rails apps, see the official Cloud Foundry guide [Getting Started Deploying Ruby on Rails Apps](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html) [external link]. 
 
 
 These steps assume you have already carried out the setup process explained in the [Quick Setup Guide](/getting_started/quick_setup_guide) section.
@@ -83,7 +83,7 @@ server. In Rails 5 and above, the default is
 [puma](http://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server).
 
 You may want to use a different web server in production. See the Cloud Foundry docs for
-[more information on configuring a production server](https://docs.cloudfoundry.org/buildpacks/prod-server.html).
+[more information on configuring a production server](https://docs.cloudfoundry.org/buildpacks/prod-server.html) [external link].
 
 
 ## Troubleshooting asset precompilation
@@ -93,4 +93,4 @@ most Rails apps, but it won't work for those which need to connect to services (
 during asset compilation. (For an example, see [MyUSA issue #636](https://github.com/18F/myusa/issues/636))
 
 There are multiple potential solutions for this. For more advice, see
-[the Cloud Foundry document on the subject](https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html#precompile).
+[the Cloud Foundry document on the subject](https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html#precompile) [external link].
