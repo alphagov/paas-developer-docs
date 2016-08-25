@@ -41,7 +41,7 @@ In this situation you have three options:
 
 As a PaaS tenant, you can divide your organization's quota capacity amongst your applications as you see fit, by way of application quotas. Application limits are specified in your application manifest or as `cf push` command line options.
 
-Use the following commands to set application quota options:
+Use the following commands to set application quota options (in each pair below, the first is the version to use in the manifest, and the second is the command line version.)
 
 + `memory:` / `-m`
 

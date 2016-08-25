@@ -118,3 +118,26 @@ Note that data restore will not be available in the event of an RDS outage affec
 
 For more details about how the RDS backup system works, see [Amazon's DB Instance Backups documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html) [external page].
 
+## High availability details
+
+We recommend you use the high availability plan (``M-HA-dedicated-9.5``) for any production apps.
+
+When you use the high availability plan, Amazon RDS provides a hot standby service to use for failover in the event that the original service fails.
+
+The failover process means that Amazon RDS will automatically change the DNS record of the database instance to point to the standby instance. You should make sure that your app doesn't cache the database IP, and any DNS caching should be configured with a low time to live (TTL). Consult the documentation for the language/framework you are using to find out how to do this.
+
+During failover, there will be an outage period (from tens of seconds to a few minutes). 
+
+See the [Amazon RDS documentation on the failover process](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html#Concepts.MultiAZ.Failover) for more details.
+
+If you wish to test how your app deals with a failover, we can trigger one for you. Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange this.
+
+## Read replicas
+
+Amazon RDS has the capability to provide a read replica: a read-only copy of your PostgreSQL database. This can be useful for performance, availability or security reasons.
+
+See the [Amazon RD documentation on read replicas](https://aws.amazon.com/rds/details/read-replicas/) to learn more.
+
+ThE Government PaaS doesn't currently support read replicas, but if you think you would find them useful, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk), providing details of your use case.
+
+
