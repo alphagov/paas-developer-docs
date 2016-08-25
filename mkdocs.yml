@@ -23,7 +23,7 @@ pages:
     - 'Production Checklist': 'deploying_apps/production_checklist.md'
 - Deploying Backing Services:
     - 'Services Overview': 'deploying_services/index.md'
-    - 'Creating a PostgreSQL Service': 'deploying_services/postgres.md'
+    - 'Using a PostgreSQL Service': 'deploying_services/postgres.md'
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'

@@ -25,4 +25,4 @@ Set the target with:
 
 Once you set the target, the Cloud Foundry client remembers it until you change it.
 
-See the Cloud Foundry documentation on [Orgs, Spaces, Roles, and Permissions](https://docs.cloudfoundry.org/concepts/roles.html) for more details.
+See the Cloud Foundry documentation on [Orgs, Spaces, Roles, and Permissions](https://docs.cloudfoundry.org/concepts/roles.html) [external link] for more details.
