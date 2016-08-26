@@ -16,7 +16,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 
         python-3.5.1  
 
-    replacing "3.5.1" with the version of Python you want to use.
+    replacing "3.5.1" with the version of Python you want to use (it must be supported by the buildpack: currently versions 2.7.11 to 3.5.2 are supported.)
 
 1. Generate a ``requirements.txt`` file if your project doesn't already have one by running ``pip freeze > requirements.txt`` in the root of the local folder.
     Add the following lines to the ``requirements.txt`` file.
@@ -103,8 +103,9 @@ In your `settings.py` file, make sure you import the package we added to the `re
 
         import dj_database_url
 
+This package will automatically parse the ``VCAP_SERVICES`` environment variable and set DATABASE_URL to the first database found.
 
-Then, you'll need to add a `DATABASES` setting. It's best to add this to the `settings.py` file. 
+Then you'll need to add a `DATABASES` setting. It's best to add this to the `settings.py` file. 
 
 
         DATABASES = {}
