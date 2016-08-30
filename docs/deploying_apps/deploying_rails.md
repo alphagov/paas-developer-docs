@@ -66,6 +66,15 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     ```
     cf start APPNAME
     ```
+    
+    You may want to consider adding the database migrations, into your deployment. The quickest solution would be, to create `Procfile` right next to your `manifest.yml` and `Gemfile`.
+    Below, you can find the minimal and appropriate contents of the `Procfile` for *Rails 5.0*.
+
+    ```
+    web: rake db:migrate && bin/rails server
+    ```
+
+    We simply, ask rake, to run the database migrations and then proceed with starting the server.
 
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
