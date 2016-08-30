@@ -18,6 +18,8 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 
     replacing "3.5.1" with the version of Python you want to use (it must be supported by the buildpack: currently versions 2.7.11 to 3.5.2 are supported.)
 
+4. Make sure you have all the required modules for your project installed into your virtual environment (including Django).
+
 1. Generate a ``requirements.txt`` file if your project doesn't already have one by running ``pip freeze > requirements.txt`` in the root of the local folder.
     Add the following lines to the ``requirements.txt`` file.
 
