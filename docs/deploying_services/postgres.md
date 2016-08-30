@@ -10,7 +10,7 @@ Currently, Government PaaS offers a ``postgres`` service which is available with
 
 The number in the plan name (in this case, ``9.5``) is the PostgreSQL version.
 
-``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
+``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 
 To create a service and bind it to your app:
@@ -102,7 +102,7 @@ The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Ea
 
 For more details, see the [Amazon RDS Maintenance documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) [external page].
 
-If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk). Times will be from 22:00 to 06:00 UTC. We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
+If you need to know the time of your maintenance window, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). Times will be from 22:00 to 06:00 UTC. We will add the ability to set the time of the maintenance window in a future version of Government PaaS.
 
 ## PostgreSQL service backup
 
@@ -112,7 +112,7 @@ Backups are taken nightly and data is retained for 7 days.
 
 If you need to restore data to an earlier state, we can restore to any point from 5 minutes to 7 days ago, with a resolution of one second. Data can be restored to a new PostgreSQL service instance running in parallel, or it can replace the existing service instance.
 
-Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange the restore process or if you need further information about the backup process. We will need approval from your organization manager if restoring will involve overwriting data.
+Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange the restore process or if you need further information about the backup process. We will need approval from your organization manager if restoring will involve overwriting data.
 
 Note that data restore will not be available in the event of an RDS outage affecting the entire Amazon availability zone.
 
@@ -130,7 +130,7 @@ During failover, there will be an outage period (from tens of seconds to a few m
 
 See the [Amazon RDS documentation on the failover process](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html#Concepts.MultiAZ.Failover) for more details.
 
-If you wish to test how your app deals with a failover, we can trigger one for you. Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange this.
+If you wish to test how your app deals with a failover, we can trigger one for you. Please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk) to arrange this.
 
 ## Read replicas
 
@@ -138,6 +138,6 @@ Amazon RDS has the capability to provide a read replica: a read-only copy of you
 
 See the [Amazon RD documentation on read replicas](https://aws.amazon.com/rds/details/read-replicas/) to learn more.
 
-ThE Government PaaS doesn't currently support read replicas, but if you think you would find them useful, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk), providing details of your use case.
+ThE Government PaaS doesn't currently support read replicas, but if you think you would find them useful, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk), providing details of your use case.
 
 

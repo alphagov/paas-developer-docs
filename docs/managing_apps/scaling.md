@@ -6,7 +6,7 @@ Note that the maximum resources you can use will be limited by your organization
 
 from the command line.
 
-If you are anticipating a spike in demand for a service hosted on the Government PaaS, please contact us well in advance at <gov-uk-paas-support@digital.cabinet-office.gov.uk>.
+If you are anticipating a spike in demand for a service hosted on the Government PaaS, please contact us well in advance at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 ##Increasing instances
 

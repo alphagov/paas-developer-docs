@@ -37,5 +37,5 @@ After deployment, you can increase the running instances to two using:
 * Your app should not write to local storage. Cloud Foundry local storage is ephemeral and can be deleted at any time.
 * You may need to set environment variables for your app to work. All configuration information should be stored in environment variables, not in the code. 
 * Instances will be restarted if they [exceed memory limits](/managing_apps/quotas/).
-* Proper [logging](/deploying_apps/logging/) might require special libraries/configuration for your app.
+* Proper [logging](/managing_apps/logging/) might require special libraries/configuration for your app.
 
