@@ -8,7 +8,7 @@ Currently, the only service available is the [PostgreSQL database service](/depl
 
 Some services (including ``postgres``) are considered paid services. Your organization may not have the ability to use paid services enabled. Access to paid services can either be enabled or disabled based on your [organisation quota](/managing_apps/quotas/).
 
-If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
+If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 ## Accessing services
 
