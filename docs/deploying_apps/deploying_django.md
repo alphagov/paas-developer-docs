@@ -24,9 +24,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
     Add the following lines to the ``requirements.txt`` file.
 
         whitenoise==1.0.6  #manages static assets
-        dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
         waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
-        psycopg2==2.6.2
 
 4. Edit your `wsgi.py` file.
 
@@ -70,9 +68,9 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 1. Create a file called `Procfile` in the root of your local folder, 
    and put in it:
     
-            web: waitress-serve --port=$PORT PROJECTNAME.wsgi:application
+            web: python manage.py migrate && waitress-serve --port=$PORT PROJECTNAME.wsgi:application
         
-    `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable.
+    `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable. Using this configuration will automatically apply any database migrations.
 
 1. Create a `manifest.yml` file in the root of your local folder.
 
@@ -101,8 +99,14 @@ You can now view your app at `https://APPNAME.cloudapps.digital`.
 
 ## PostgreSQL setup with Django
 
-In your `settings.py` file, make sure you import the package we added to the `requirements.txt` file above:
+Add these lines to your ``requirements.txt``:
 
+```
+psycopg2==2.6.2 #installs the postgres driver
+dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
+```
+
+In your `settings.py` file, make sure you import the ``dj_database_url`` package we added to the `requirements.txt` file above:
 
         import dj_database_url
 
@@ -110,14 +114,9 @@ This package will automatically parse the ``VCAP_SERVICES`` environment variable
 
 Then you'll need to add a `DATABASES` setting. It's best to add this to the `settings.py` file. 
 
-
         DATABASES = {}
         DATABASES['default'] =  dj_database_url.config()
 
 Your `local_settings.py` file will override this when you're working locally.
 
-To have database migrations automatically applied, amend your `Procfile` to contain the following:
-
-     web: python manage.py migrate && waitress-serve --port=$PORT PROJECTNAME.wsgi:application
-
-Again, remember to replace `PROJECTNAME` with the name of your WSGI module.
+The `Procfile` configuration provided in the section above will automatically apply database migrations.
