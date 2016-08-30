@@ -26,6 +26,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
         whitenoise==1.0.6  #manages static assets
         dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
         waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
+        psycopg2==2.6.2
 
 4. Edit your `wsgi.py` file.
 
