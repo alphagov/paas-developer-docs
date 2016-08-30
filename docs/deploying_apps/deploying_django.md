@@ -71,7 +71,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
     
             web: python manage.py migrate && waitress-serve --port=$PORT PROJECTNAME.wsgi:application
         
-    `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable.
+    `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable. Using this configuration will automatically apply any database migrations.
 
 1. Create a `manifest.yml` file in the root of your local folder.
 
