@@ -58,7 +58,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     cf push --no-start APPNAME
     ```
 
-    [Create a PostgreSQL backing service and bind it to your app](/deploying_services/postgres/). 
+    [Create a PostgreSQL backing service (if required) and bind it to your app](/deploying_services/postgres/). 
     The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby DATABASE_URL accordingly.
 
     Once you have created and bound the PostgreSQL service, run:
@@ -67,14 +67,13 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     cf start APPNAME
     ```
     
-    You may want to consider adding the database migrations, into your deployment. The quickest solution would be, to create `Procfile` right next to your `manifest.yml` and `Gemfile`.
-    Below, you can find the minimal and appropriate contents of the `Procfile` for *Rails 5.0*.
+    To enable Rails support for database migrations, you may wish to create a `Procfile` in the same directory as your `manifest.yml` and `Gemfile`.
+
+    This is a minimal example of the `Procfile` content for *Rails 5.0*:
 
     ```
     web: rake db:migrate && bin/rails server
     ```
-
-    We simply, ask rake, to run the database migrations and then proceed with starting the server.
 
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
