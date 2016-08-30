@@ -24,7 +24,6 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
     Add the following lines to the ``requirements.txt`` file.
 
         whitenoise==1.0.6  #manages static assets
-        dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
         waitress==0.8.9 #a pure python WSGI server that is a replacement for gunicorn
 
 4. Edit your `wsgi.py` file.
@@ -100,13 +99,14 @@ You can now view your app at `https://APPNAME.cloudapps.digital`.
 
 ## PostgreSQL setup with Django
 
-Add this line to your ``requirements.txt``:
+Add these lines to your ``requirements.txt``:
 
 ```
-psycopg2==2.6.2
+psycopg2==2.6.2 #installs the postgres driver
+dj-database-url==0.3.0 #grabs environment variables and dumps them into a Django settings file
 ```
 
-In your `settings.py` file, make sure you import the package we added to the `requirements.txt` file above:
+In your `settings.py` file, make sure you import the ``dj_database_url`` package we added to the `requirements.txt` file above:
 
         import dj_database_url
 
