@@ -18,7 +18,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
 
-1. [Add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging.
+1. If you're using Rails 4, [add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging. Rails 5 has this functionality build in by default.
 
 1. Create a manifest.yml file in the folder where you checked out your app.
 
