@@ -1,23 +1,35 @@
 
-Government PaaS enables you to create a PostgreSQL database service (powered by Amazon Web Services) and bind it to your app. 
+Government PaaS enables you to create a PostgreSQL database service (powered by Amazon Web Services) and bind it to your app.
 
 In Cloud Foundry, each service may have multiple plans available with different characteristics.
 
-Currently, Government PaaS offers a ``postgres`` service which is available with two separate plans: 
+Currently, Government PaaS offers a ``postgres`` service which is available with six separate plans:
 
+* ``S-dedicated-9.5``
+* ``S-HA-dedicated-9.5`` (high availability, recommended for production)
 * ``M-dedicated-9.5``
 * ``M-HA-dedicated-9.5`` (high availability, recommended for production)
+* ``L-dedicated-9.5``
+* ``L-HA-dedicated-9.5`` (high availability, recommended for production)
 
 The number in the plan name (in this case, ``9.5``) is the PostgreSQL version.
+
+The letters, at the beginning of the plan, correspond to the instance sizes on AWS as follows:
+
+* ``S`` - ``t2.small``
+* ``M`` - ``m4.medium``
+* ``L`` - ``m4.2xlarge``
+
+You can learn more, on AWS Details page, [here](https://aws.amazon.com/rds/details/#DB_Instance_Classes).
 
 ``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 
 To create a service and bind it to your app:
 
-1. From the command line, run:  
+1. From the command line, run:
 
-    ``cf marketplace``  
+    ``cf marketplace``
 
     to see the available services.
 
@@ -25,15 +37,17 @@ To create a service and bind it to your app:
 
     
         service     plans                                   description
-        postgres    M-dedicated-9.5*, M-HA-dedicated-9.5*   AWS RDS PostgreSQL service
+        postgres    S-dedicated-9.5*, S-HA-dedicated-9.5*,  AWS RDS PostgreSQL service
+                    M-dedicated-9.5*, M-HA-dedicated-9.5*,
+                    L-dedicated-9.5*, L-HA-dedicated-9.5*
 
-2.  Run: 
+2.  Run:
 
     ``cf marketplace -s postgres``
 
     to see details of the available plans.
 
-3. Run: 
+3. Run:
 
     ``cf create-service SERVICE PLAN SERVICE_INSTANCE``
 
@@ -43,7 +57,7 @@ To create a service and bind it to your app:
 
     Note that for a production service, we strongly recommend you select the high-availability plan (``M-HA-dedicated-9.5``).
 
-3. It may take some time (5 to 10 minutes) for the service instance to be set up. To find out its status, run:  
+3. It may take some time (5 to 10 minutes) for the service instance to be set up. To find out its status, run:
 
     ``cf service SERVICE_INSTANCE``
 
@@ -94,11 +108,19 @@ Use ``cf env APPNAME`` to see the environment variables.
 
 You can check for database connection errors by viewing the recent logs with ``cf logs APPNAME --recent``.
 
+## Service update
 
+You may find a desire, to upgrade or downgrade your plan, to fulfill your needs. You can do that, by running the following command:
+
+```
+cf update-service SERVICE_INSTANCE -p NEW_PLAN
+```
+
+By default, this functionality will schedule the change, for the next service maintenance slot, see the next section for details. **This however means, that your service may be locked down for further updates, until the scheduled work will finish.**
 
 ## PostgreSQL service maintenance times
 
-The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Each PostgreSQL service you create will have a randomly-assigned weekly 30 minute maintenance window, during which there may be brief downtime. (To minimise downtime, select the ``M-HA-dedicated-9.5`` high availability plan). Minor version upgrades (for example from 9.4.1 to 9.4.2) will be applied during this window.
+The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Each PostgreSQL service you create will have a randomly-assigned weekly 30 minute maintenance window, during which there may be brief downtime. (To minimise downtime, select the ``*-HA-dedicated-9.5`` high availability plan, where the asterisk is the size of the plan). Minor version upgrades (for example from 9.4.1 to 9.4.2) will be applied during this window.
 
 For more details, see the [Amazon RDS Maintenance documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) [external page].
 
@@ -106,7 +128,7 @@ If you need to know the time of your maintenance window, please contact us at [g
 
 ## PostgreSQL service backup
 
-The data stored within any PostgreSQL service you create is backed up using the standard Amazon RDS backup system. 
+The data stored within any PostgreSQL service you create is backed up using the standard Amazon RDS backup system.
 
 Backups are taken nightly and data is retained for 7 days.
 
@@ -120,13 +142,13 @@ For more details about how the RDS backup system works, see [Amazon's DB Instanc
 
 ## High availability details
 
-We recommend you use the high availability plan (``M-HA-dedicated-9.5``) for any production apps.
+We recommend you use the high availability plan (``*-HA-dedicated-9.5``) for any production apps, where the asterisk is the size of the plan.
 
 When you use the high availability plan, Amazon RDS provides a hot standby service to use for failover in the event that the original service fails.
 
 The failover process means that Amazon RDS will automatically change the DNS record of the database instance to point to the standby instance. You should make sure that your app doesn't cache the database IP, and any DNS caching should be configured with a low time to live (TTL). Consult the documentation for the language/framework you are using to find out how to do this.
 
-During failover, there will be an outage period (from tens of seconds to a few minutes). 
+During failover, there will be an outage period (from tens of seconds to a few minutes).
 
 See the [Amazon RDS documentation on the failover process](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html#Concepts.MultiAZ.Failover) for more details.
 
