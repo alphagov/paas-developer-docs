@@ -12,6 +12,58 @@ We have provided a ``sandbox`` space for you to use for learning about the PaaS.
 
 It's also important to realise that if you deploy an app using the same name and target as an existing app, the original will be replaced. If you are not sure about where to deploy your app, consult the rest of your team.
 
+##Deploying a non-database app
+
+This is how to deploy a Rails app that doesn't require a database.
+
+1. Check out your Rails app to a local folder.
+
+1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
+
+1. If you're using Rails 4, [add the `rails_12factor` gem](https://github.com/heroku/rails_12factor#install) for better logging. Rails 5 has this functionality built in by default.
+
+1. Create a manifest.yml file in the folder where you checked out your app.
+
+        ---
+        applications:
+        - name: my-rails-app
+          memory: 256M
+          buildpack: ruby_buildpack
+
+    Replace ``my-rails-app`` with a unique name for your app. (You can use ``cf apps`` to see apps which already exist).
+
+    The `memory` line tells the PaaS how much memory to allocate to the app.
+
+    A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Ruby, you use the ``ruby_buildpack``.
+
+1. Upload and start the application by running:
+
+    ```
+    cf push APPNAME
+    ```
+
+    from the folder where you checked out your app.
+
+    If you do not specify a name for the app after the ``cf push`` command, the name from the manifest file is used.
+
+1. Set any additional [environment variables](/deploying_apps/env_variables/) required by your app. For example:
+
+    ```
+    cf set-env APPNAME VARIABLE `value`
+    ```
+
+    where VARIABLE is a unique name for the variable, and `value` is the value to set.
+
+Your app should now be live at `https://APPNAME.cloudapps.digital`!
+
+For a production service, you should run at least two instances of the app to ensure availability.
+
+You can add another instance of your app by running:
+
+``cf scale APPNAME -i 2``
+
+##Deploying with a PostgreSQL database
+
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL.
 
 1. Check out your Rails app to a local folder.
@@ -35,21 +87,16 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     A buildpack provides any framework and runtime support required by an app. In this case, because the app is written in Ruby, you use the ``ruby_buildpack``.
 
 
-1. If your app does not need a backing service like PostgreSQL, upload and start the application:
+1. Upload the app without starting it using this command:
 
     ```
-    cf push APPNAME
+    cf push --no-start APPNAME
     ```
 
     from the folder where you checked out your app.
 
     If you do not specify a name for the app after the ``cf push`` command, the name from the manifest file is used.
 
-    If your app needs a backing service, upload it but do not start it:
-
-    ```
-    cf push --no-start APPNAME
-    ```
 
 1. Set any additional [environment variables](/deploying_apps/env_variables/) required by your app. For example:
 
@@ -62,12 +109,6 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
 1. [Create a PostgreSQL backing service (if required) and bind it to your app](/deploying_services/postgres/). 
     The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby DATABASE_URL accordingly.
-
-    Once you have created and bound the PostgreSQL service, run:
-
-    ```
-    cf start APPNAME
-    ```
     
     To enable Rails support for database migrations, you may wish to create a `Procfile` in the same directory as your `manifest.yml` and `Gemfile`.
 
@@ -77,9 +118,15 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     web: rake db:migrate && bin/rails server
     ```
 
+1. Start your app by running: 
+
+    ```
+    cf start APPNAME
+    ```
+
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
-For a production site, you should run at least two instances of the app to ensure availability.
+For a production service, you should run at least two instances of the app to ensure availability.
 
 You can add another instance of your app by running:
 
