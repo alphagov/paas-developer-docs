@@ -11,16 +11,19 @@ In order to provide you with an account, we need to store some personal data abo
 Government PaaS uses a hosting technology called Cloud Foundry. As a tenant (that is, someone who is hosting an application on the PaaS), you will use the Cloud Foundry command line client to interact with the PaaS. To set it up:
 
 1. Download and install the <a href="https://github.com/cloudfoundry/cli#downloads" target="blank">Cloud Foundry CLI for your platform </a> [external page, opens in new tab]
+    
+     *Note:* On macOS Sierra, installing with Homebrew does not work. We recommend using the Mac binary or installer.
+
 2. To check that it installed correctly, go to the Terminal/command line/Command Prompt and run:
 
     ```
     cf -v
     ```
 
-    You should get a message like this, confirming the version that's installed (it may not be this exact version):
+    You should get a message like this, confirming the version that's installed:
 
     ```
-    cf version 6.18.1+a1103f0-2016-05-24
+    cf version X.X.X...
     ```
 
     *Note:* depending on your network configuration you might need to [set an ```HTTP_PROXY``` environment variable](https://docs.cloudfoundry.org/cf-cli/http-proxy.html) [external link] for the CLI to connect. Contact your network administrators to work out the correct settings for your configuration.  
