@@ -12,18 +12,22 @@ Currently, Government PaaS offers a ``postgres`` service which is available with
 * ``L-dedicated-9.5``
 * ``L-HA-dedicated-9.5`` (high availability, recommended for production)
 
-The number in the plan name (in this case, ``9.5``) is the PostgreSQL version.
+The number in the plan name (in this example, ``9.5``) is the PostgreSQL version.
 
-The letters, at the beginning of the plan, correspond to the instance sizes on AWS as follows:
+The letter at the beginning of the plan name corresponds to the instance size on Amazon Web Services as follows:
 
 * ``S`` - ``t2.small``
 * ``M`` - ``m4.medium``
 * ``L`` - ``m4.2xlarge``
 
-You can learn more, on AWS Details page, [here](https://aws.amazon.com/rds/details/#DB_Instance_Classes).
+Full details of what these plans include is available on [the AWS Product Details page](https://aws.amazon.com/rds/details/#DB_Instance_Classes).
+
+## Paid services
 
 ``postgres`` is considered a paid service. Paid services may not be enabled on your account. If you try to create a service and receive an error stating "service instance cannot be created because paid service plans are not allowed", please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
+
+## Setting up a PostgreSQL service
 
 To create a service and bind it to your app:
 
