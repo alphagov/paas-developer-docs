@@ -66,6 +66,8 @@ You can add another instance of your app by running:
 
 Note that the only database service currently supported by PaaS is PostgreSQL. If your Rails app requires a database, it must be able to work with PostgreSQL.
 
+ The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby `DATABASE_URL` environment variable accordingly. Ensure that your app is configured to use `DATABASE_URL` to set its database configuration when deployed to the PaaS.
+
 1. Check out your Rails app to a local folder.
 
 1. [Exclude files ignored by Git](/deploying_apps/excluding_files/).
@@ -107,8 +109,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
     where VARIABLE is a unique name for the variable, and `value` is the value to set.
 
 
-1. [Create a PostgreSQL backing service (if required) and bind it to your app](/deploying_services/postgres/). 
-    The Cloud Foundry buildpack for Ruby automatically gets the details of the first available PostgreSQL service from the ``VCAP_SERVICES`` environment variable and sets the Ruby `DATABASE_URL` environment variable accordingly. Ensure that your app is configured to use `DATABASE_URL` to set its database configuration when deployed to the PaaS.
+1. [Create a PostgreSQL backing service (if required) and bind it to your app](/deploying_services/postgres/).
     
     To enable Rails support for database migrations, you may wish to create a `Procfile` in the same directory as your `manifest.yml` and `Gemfile`. The `Procfile` is a way to specify commands to be run when deploying your app.
 
