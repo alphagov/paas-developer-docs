@@ -25,7 +25,7 @@ pages:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Using a PostgreSQL Service': 'deploying_services/postgres.md'
 - Troubleshooting:
-    - 'Troubleshooting': 'troubleshooting/troubleshooting.md'
+    - 'Troubleshooting': 'troubleshooting/index.md'
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
