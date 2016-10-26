@@ -69,6 +69,8 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
    and put in it:
     
             web: python manage.py migrate && waitress-serve --port=$PORT PROJECTNAME.wsgi:application
+
+    The Procfile is a way to specify commands to be run when deploying your app; in this case, for database migration.
         
     `PROJECTNAME` should be replaced with whatever the name of your WSGI module is. By default, this is the same as the name of your project module, but it may be changed using the DJANGO_SETTINGS_MODULE environment variable. Using this configuration will automatically apply any database migrations.
 
