@@ -1,6 +1,8 @@
-For logs to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file – see the framework-specific guidance in the menu.
+
 
 ## Current logs
+
+For log messages to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file.
 
 The most direct way to view events related to your application through the deploy process is:
 
