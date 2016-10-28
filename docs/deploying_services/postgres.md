@@ -112,16 +112,6 @@ Use ``cf env APPNAME`` to see the environment variables.
 
 You can check for database connection errors by viewing the recent logs with ``cf logs APPNAME --recent``.
 
-## Service update
-
-You may find a desire, to upgrade or downgrade your plan, to fulfill your needs. You can do that, by running the following command:
-
-```
-cf update-service SERVICE_INSTANCE -p NEW_PLAN
-```
-
-By default, this functionality will schedule the change, for the next service maintenance slot, see the next section for details. **This however means, that your service may be locked down for further updates, until the scheduled work will finish.**
-
 ## PostgreSQL service maintenance times
 
 The PaaS PostgreSQL service is currently provided by Amazon Web Services RDS. Each PostgreSQL service you create will have a randomly-assigned weekly 30 minute maintenance window, during which there may be brief downtime. (To minimise downtime, select the ``*-HA-dedicated-9.5`` high availability plan, where the asterisk is the size of the plan). Minor version upgrades (for example from 9.4.1 to 9.4.2) will be applied during this window.
