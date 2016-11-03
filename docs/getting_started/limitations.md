@@ -1,5 +1,13 @@
 While the Government PaaS is built using Cloud Foundry technology, we don't support all Cloud Foundry features. This section explains some Cloud Foundry features that are not enabled, as well as some limitations of the beta phase.
 
+## IP whitelisting
+
+We currently only allow command line client connections from whitelist IP addresses. When you sign up to use the PaaS, you must tell us the IPs or IP ranges you want us to whitelist. 
+
+You can [view the list of allowed IPs](https://github.com/alphagov/paas-cf/blob/master/terraform/prod.tfvars#L9). If you want us to allow additional IPs, please email us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](gov-uk-paas-support@digital.cabinet-office.gov.uk).
+
+Note that the whitelist only limits use of the command line client; it does not restrict access to deployed apps, which are available to everyone.
+
 ## Custom buildpacks are not supported
 
 Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages. 
@@ -34,7 +42,7 @@ In the meantime, we suggest that you use a [blue-green deployment process](https
 
 During the beta period, there may be occasional brief periods where API access is unavailable during a platform update, causing commands sent from the command line client to fail. 
 
-If you find that a valid command is failing and the error message does not explain the problem, please wait 5 minutes before trying the command again. If the error persists for more than 5 minutes, it is unlikely to be caused by a platform update and you should contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+If you find that a valid command is failing and the error message does not explain the problem, please wait 5 minutes before trying the command again. If the error persists for more than 5 minutes, it is unlikely to be caused by a platform update and you should contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).  
 
 We are working on a fix to prevent the interruption of API access when we update the platform.
 
