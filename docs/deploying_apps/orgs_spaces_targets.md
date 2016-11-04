@@ -16,6 +16,8 @@ where ORGNAME is the name of the org.
 
 Each organisation is divided into one or more **spaces**, which are used to organise app development, deployment, and maintenance. For example, you might have spaces for development and production versions of your app.
 
+![Diagram showing that an organisation contains multiple spaces](/img/org-spaces.png)
+
 Different accounts can have different permissions to access each space. For example, you may choose to grant a junior developer's account access to your ``development`` space, but not to ``production``. To set access, your account needs to have the ``OrgManager`` role; see the section below on [Managing spaces](#managing-spaces) for details.
 
 To see the spaces you can access in your current org, run:
@@ -60,7 +62,7 @@ To grant access to a space to another account, run:
 
 The ``USERNAME`` is the email address the user logs in with when using the command line client.
 
-For example, say you had just created a space called ``test`` within your org called ``acme``, and you wanted to grant your coworker ``ana@example.com`` to be able to use that space as a developer, you would run:
+For example, say you had just created a space called ``test`` within your org called ``acme``, and you wanted your coworker ``ana@example.com`` to be able to use that space as a developer, you would run:
 
 ``cf set-space-role ana@example.com acme test SpaceDeveloper``
 
