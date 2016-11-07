@@ -1,6 +1,5 @@
 
-
-## Current logs
+If your app deployment is failing and it's not clear why from the command line client messages, you should consult the logs.
 
 For log messages to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file.
 
@@ -29,7 +28,7 @@ Running ``cf events`` shows you when an app starts, stops, restarts, or crashes 
 
 ## Further information
 
-For more information about logging and troubleshooting, see the Cloud Foundry documentation:
+For more information about logging and troubleshooting app deployment, see the following sections of the Cloud Foundry documentation:
 
 * [Information about the log format](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html) [external link]
 * [Viewing your application's logs](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#view) [external link]
