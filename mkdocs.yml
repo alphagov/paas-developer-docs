@@ -16,6 +16,7 @@ pages:
     - 'Excluding Files': 'deploying_apps/excluding_files.md'
     - 'Environment Variables': 'deploying_apps/env_variables.md'
     - 'Orgs, Spaces and Targets': 'deploying_apps/orgs_spaces_targets.md'
+    - 'Names, Routes and Domains': 'deploying_apps/names_routes_domains.md'
     - 'Deploying a Static Site': 'deploying_apps/deploying_static_sites.md'
     - 'Deploying a Ruby on Rails App': 'deploying_apps/deploying_rails.md'
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'

@@ -3,7 +3,7 @@ worth testing that you can carry out this process before you try to deploy a mor
 
 When you deploy an app, you must select a combination of an organisation and a space (see [Orgs, Spaces and Targets](/deploying_apps/orgs_spaces_targets) for more information). This is called the **target**.
 
-We have provided a ``sandbox`` space for you to use for learning about the PaaS. You may want to target the sandbox while you are testing by running:
+We have provided a ``sandbox`` space in your organisation for you to use for learning about the PaaS. You may want to target the sandbox while you are testing by running:
 
 ``cf target -s sandbox``
 

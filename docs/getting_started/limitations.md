@@ -18,6 +18,14 @@ If you want to use a custom buildpack because you need a newer version of a runt
 
 If you'd like to use custom buildpacks, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
+## Custom domains require CDN
+
+By default, your uploaded apps will be hosted on the ``cloudapps.digital`` domain. In production, you will probably want your app to be available through your own url (for example, ``yourapp.service.gov.uk``).
+
+Custom domains are not yet fully supported by the Government PaaS due to TLS certificate issues.
+
+Currently, we recommend that you use a CDN to serve your app with a custom domain. If this is not a suitable solution for you, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk) with details of your use case.
+
 ## Direct SSH access is currently disabled
 
 The Cloud Foundry command line client has an option to enable you to connect directly to the virtual machines on which your apps run using ``cf ssh``. (See the [Cloud Foundry documentation on accessing apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html) [external link].
