@@ -24,7 +24,13 @@ then you should do the equivalent command with ``cf set-env``:
 
 ##System-provided environment variables
 
-There are two system-provided environment variables which contain information in JSON format.
+As well as environment variables you set yourself, there are a number of system-provided variables which give you information about configuration details handled by the PaaS: the port on which the application is listening, the maximum memory each instance can use, the external IP address of the instance, and so on.
+
+Do not attempt to change the values of these system-provided variables with the CLI or your app's code.
+
+For a full list, see Cloud Foundry's [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html) [external link] documentation.
+
+Two important variables for initial setup are:
 
 * VCAP_SERVICES contains details (including credentials) of any backing services bound to the app
 * VCAP_APPLICATION provides details of the currently running application (for example, language runtime version)
@@ -38,6 +44,3 @@ If your app connects to a backing service, you may need to have it parse VCAP_SE
 However, some buildpacks will do this for you automatically. See the deploy instructions for the language/framework you are using for details.
 
 
-##Further reading
-
-For more information, see Cloud Foundry's [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html) [external link] documentation.
