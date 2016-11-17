@@ -28,6 +28,7 @@ pages:
 - Troubleshooting:
     - 'App Deployment Problems': 'troubleshooting/index.md'
     - 'CLI Client Problems': 'troubleshooting/cli.md'
+    - 'PORT Environment Variable': 'troubleshooting/port.md'
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
