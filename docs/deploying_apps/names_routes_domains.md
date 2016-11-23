@@ -37,13 +37,17 @@ There are a few possible solutions to this problem:
 
     This solution means you can change the hostname while keeping the app name the same. This is more flexible, but means you need to keep track of both a hostname and an app name for each app. It could potentially make it easier to deploy to the wrong target.
 
-3. Use the ``--random-route`` option with the ``cf-push`` command. This appends a couple of random words to the hostname, to avoid clashes. For example, if you run:
+3. Use the ``random-route`` option. This appends a couple of random words to the hostname, to avoid clashes. For example, if you run:
     
     ``cf push myapp --random-route``
 
     the app will be hosted at something like ``https://myapp-mummifying-giraffe.cloudapps.digital``.
 
-    This is a convenient way to avoid clashes automatically, but your end users may find the resulting URLs strange.
+    You can also specify this in your app's ``manifest.yml`` file:
+
+    ``random-route: true``
+
+    This is a convenient way to avoid clashes automatically. The disadvantage is that if your end users can see the resulting URLs, they may find the random words strange.
 
 ## Custom domains
 
