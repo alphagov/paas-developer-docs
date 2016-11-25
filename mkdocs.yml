@@ -22,6 +22,7 @@ pages:
     - 'Deploying a Node.js App': 'deploying_apps/deploying_node_js.md'
     - 'Deploying a Django App': 'deploying_apps/deploying_django.md'
     - 'Production Checklist': 'deploying_apps/production_checklist.md'
+    - 'Continuous Integration Using Jenkins': 'deploying_apps/jenkins.md'
 - Deploying Backing Services:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Using a PostgreSQL Service': 'deploying_services/postgres.md'
