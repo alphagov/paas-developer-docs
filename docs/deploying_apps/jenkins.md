@@ -7,7 +7,7 @@ There are two main approaches to pushing applications to the Government PaaS wit
 
 Both of these approaches require you to add a Cloud Foundry username and password to Jenkins using the credentials plugin. To do this, follow the instructions on [Setting up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
-Using the Cloud Foundry plugin is the easier approach and simply allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry Plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
+Using the Cloud Foundry plugin is the easier approach and simply allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
 
 Setting up custom scripts requires a bit more configuration, but allows you to fully script your deployment. To do this securely, you will need to follow the [Setting up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts) instructions to make credentials available as environment variables.
 
@@ -39,7 +39,7 @@ You can now go on to either:
 Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
-2. Click on the **Available** tab and find the Cloud Foundry Plugin. Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
+2. Click on the **Available** tab and find "Cloud Foundry Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
 
 An extra post-build action called "Push to Cloud Foundry" is now available in the dropdown menu when you configure a job.
 
