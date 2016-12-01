@@ -1,5 +1,7 @@
 site_name: Government Platform as a Service documentation
 theme: readthedocs
+extra_javascript:
+  - js/fix_search.js
 pages:
 - Overview:
     - 'Government Platform as a Service (PaaS)': 'index.md'
