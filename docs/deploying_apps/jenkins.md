@@ -13,7 +13,7 @@ Setting up custom scripts requires a bit more configuration, but allows you to f
 
 ## Setting up the credentials plugin
 
-To install the credentials plugin:
+To install the credentials plugin manually:
 
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
 2. Click on the **Installed** tab and check if "Credentials Plugin" is listed. If it's listed, skip the next step.
@@ -36,7 +36,7 @@ You can now go on to either:
 
 ## Setting up the Cloud Foundry plugin
 
-Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
+Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin). To install it manually:
 
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
 2. Click on the **Available** tab and find "Cloud Foundry Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
@@ -57,6 +57,8 @@ Further information can be found on the [Cloud Foundry plugin's wiki page](https
 Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
 Note that using the custom scripts approach exposes the password via the process command line, so it can be read by other processes running on the same machine. If this risk is not acceptable, please use the Cloud Foundry plugin described above. The Cloud Foundry project is aware of the problem and we expect they will provide a more secure login mechanism soon.
+
+The custom scripts approach needs the Jenkins credentials binding plugin. To install it manually:
 
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
 2. Click on the **Available** tab and find "Credentials Binding Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
