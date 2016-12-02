@@ -56,6 +56,8 @@ Further information can be found on the [Cloud Foundry plugin's wiki page](https
 
 Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
+Note that currently, this approach briefly exposes the password via the process command line. If this risk is not acceptable, please use the Cloud Foundry plugin described above. The Cloud Foundry project is aware of the problem and we expect they will provide a more secure login mechanism soon.
+
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
 2. Click on the **Available** tab and find "Credentials Binding Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
 3. In your build configuration, select the **Use secret text(s) or file(s)**checkbox in the "Build Environment" section.
