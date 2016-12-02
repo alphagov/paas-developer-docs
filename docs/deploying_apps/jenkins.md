@@ -67,9 +67,10 @@ Once this is set up, any shell scripts you configure in Jenkins will have the cr
 A basic 'execute shell' buildstep would look like this:
 
 ```
-# Important: always set $CF_HOME to a location within your project.
-# We set it above the workspace to not conflict with your repository.
-export CF_HOME="${WORKSPACE}/../"
+# Set CF_HOME per-job so that jobs do not share or overwrite each others' credentials.
+# Remember to use a local subdirectory for your code to avoid including the credentials in your app.
+export CF_HOME="${WORKSPACE}"
+cd my-code
 
 cf api https://api.cloud.service.gov.uk
 
