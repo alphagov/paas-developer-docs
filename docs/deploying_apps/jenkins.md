@@ -2,14 +2,14 @@
 
 There are two main approaches to pushing applications to the Government PaaS with [Jenkins](https://jenkins.io/):
 
-1. Use the Cloud Foundry plugin for Jenkins (simple, less flexible)
-1. Use custom scripts (advanced, allows full scripting of deployments)
+1. Use custom scripts (allows full scripting of deployments)
+1. Use the Cloud Foundry plugin for Jenkins (less flexible)
 
 Both of these approaches require you to add a Cloud Foundry username and password to Jenkins using the credentials plugin. To do this, follow the instructions on [Setting up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
-Using the Cloud Foundry plugin is the easier approach and simply allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
+Using the Cloud Foundry plugin allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
 
-Setting up custom scripts requires a bit more configuration, but allows you to fully script your deployment. To do this securely, you will need to follow the [Setting up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts) instructions to make credentials available as environment variables.
+Setting up custom scripts allows you to fully script your deployment. To do this securely, you will need to follow the [Setting up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts) instructions to make credentials available as environment variables.
 
 ## Setting up the credentials plugin
 
@@ -31,26 +31,8 @@ You should provide the credentials for a dedicated PaaS user account created for
 
 You can now go on to either:
 
-* [set up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) *or*
-* [set up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts)
-
-## Setting up the Cloud Foundry plugin
-
-Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin). To install it manually:
-
-1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
-2. Click on the **Available** tab and find "Cloud Foundry Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
-
-An extra post-build action called "Push to Cloud Foundry" is now available in the dropdown menu when you configure a job.
-
-1. In your job's configuration, click the **Add post-build action** dropdown menu and select **Push to Cloud Foundry**.
-2. In the **Target** field, enter `https://api.cloud.service.gov.uk`.
-3. In **Credentials**, select the user you created using the credentials plugin.
-4. Enter your organisation and the space the application will be deployed to. See [Orgs, Spaces and Targets](/deploying_apps/orgs_spaces_targets/) for more details about organisations and spaces. You do not need to tick "Allow self-signed certificate" or "Reset app if already exists".
-5. The rest of the fields can be left with their default values. The plugin expects you to have a manifest file called `manifest.yml` in the root of the application folder. If you do not, you can provide the path to the application manifest, or enter a manifest configuration directly into the plugin.
-6. Click **Save**.
-
-Further information can be found on the [Cloud Foundry plugin's wiki page](https://wiki.jenkins-ci.org/display/JENKINS/Cloud+Foundry+Plugin).
+* [set up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts) *or*
+* [set up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin)
 
 ## Setting up custom scripts
 
@@ -89,4 +71,27 @@ cf push
 # Destroy token
 cf logout
 ```
+
+
+
+## Setting up the Cloud Foundry plugin
+
+Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
+
+To install the Cloud Foundry plugin manually:
+
+1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
+2. Click on the **Available** tab and find "Cloud Foundry Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
+
+An extra post-build action called "Push to Cloud Foundry" is now available in the dropdown menu when you configure a job.
+
+1. In your job's configuration, click the **Add post-build action** dropdown menu and select **Push to Cloud Foundry**.
+2. In the **Target** field, enter `https://api.cloud.service.gov.uk`.
+3. In **Credentials**, select the user you created using the credentials plugin.
+4. Enter your organisation and the space the application will be deployed to. See [Orgs, Spaces and Targets](/deploying_apps/orgs_spaces_targets/) for more details about organisations and spaces. You do not need to tick "Allow self-signed certificate" or "Reset app if already exists".
+5. The rest of the fields can be left with their default values. The plugin expects you to have a manifest file called `manifest.yml` in the root of the application folder. If you do not, you can provide the path to the application manifest, or enter a manifest configuration directly into the plugin.
+6. Click **Save**.
+
+Further information can be found on the [Cloud Foundry plugin's wiki page](https://wiki.jenkins-ci.org/display/JENKINS/Cloud+Foundry+Plugin).
+
 
