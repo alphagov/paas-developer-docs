@@ -68,13 +68,14 @@ The custom scripts approach needs the Jenkins credentials binding plugin. To ins
 
 Once this is set up, any shell scripts you configure in Jenkins will have the credentials available as environment variables.
 
+To protect these credentials and prevent them leaking to other Jenkins jobs, we suggest you set your `CF_HOME` to a temporary directory.
+
 A basic 'execute shell' buildstep would look like this:
 
 ```
-# Set CF_HOME per-job so that jobs do not share or overwrite each others' credentials.
-# Remember to use a local subdirectory for your code to avoid including the credentials in your app.
-export CF_HOME="${WORKSPACE}"
-cd my-code
+# Set CF_HOME in a temp dir so that jobs do not share or overwrite each others' credentials.
+export CF_HOME="$(mktemp -d)"
+trap 'rm -r $CF_HOME' EXIT
 
 cf api https://api.cloud.service.gov.uk
 
