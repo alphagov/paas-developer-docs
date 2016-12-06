@@ -7,9 +7,12 @@ There are two main approaches to pushing applications to the Government PaaS wit
 
 Both of these approaches require you to add a Cloud Foundry username and password to Jenkins using the credentials plugin. To do this, follow the instructions on [Setting up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
-Using the Cloud Foundry plugin allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
 
 Setting up custom scripts allows you to fully script your deployment. To do this securely, you will need to follow the [Setting up custom scripts](/deploying_apps/jenkins/#setting-up-custom-scripts) instructions to make credentials available as environment variables.
+
+Using the Cloud Foundry plugin only allows Jenkins to push your application to the Government PaaS as a post-build action: the equivalent of doing a `cf login` followed by a `cf push`. There is little scope for configuration beyond using the application manifest. To use the plugin, follow the [Setting up the Cloud Foundry plugin](/deploying_apps/jenkins/#setting-up-the-cloud-foundry-plugin) instructions.
+
+
 
 ## Setting up the credentials plugin
 
