@@ -41,13 +41,13 @@ You can now go on to either:
 
 Before you do this, make sure you first [set up the credentials plugin](/deploying_apps/jenkins/#setting-up-the-credentials-plugin).
 
-Note that using the custom scripts approach exposes the password via the process command line, so it can be read by other processes running on the same machine. If this risk is not acceptable, please use the Cloud Foundry plugin described above. The Cloud Foundry project is aware of the problem and we expect they will provide a more secure login mechanism soon.
+Note that using the custom scripts approach exposes the password via the process command line, so it can be read by other processes running on the same machine. If this risk is not acceptable, please use the Cloud Foundry plugin described below. The Cloud Foundry project is aware of the problem and we expect they will provide a more secure login mechanism soon.
 
 The custom scripts approach needs the Jenkins credentials binding plugin. To install it manually:
 
 1. In the Jenkins web interface, click on **Manage Jenkins**, then **Manage Plugins**.
 2. Click on the **Available** tab and find "Credentials Binding Plugin". Check the box to select the plugin, then click either **Install without restart** or **Download now and install after restart** at the bottom of the interface.
-3. In your build configuration, select the **Use secret text(s) or file(s)**checkbox in the "Build Environment" section.
+3. In your build configuration, select the **Use secret text(s) or file(s)** checkbox in the "Build Environment" section.
 4. Click on the **Add** drop down menu and select **Username and password (separated)**.
 5. Choose your variable names and select the user whose credentials will be used.
 
