@@ -26,12 +26,6 @@ Custom domains are not yet fully supported by the Government PaaS due to TLS cer
 
 Currently, we recommend that you use a CDN to serve your app with a custom domain. If this is not a suitable solution for you, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk) with details of your use case.
 
-## Direct SSH access is currently disabled
-
-The Cloud Foundry command line client has an option to enable you to connect directly to the virtual machines on which your apps run using ``cf ssh``. (See the [Cloud Foundry documentation on accessing apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html) [external link].
-
-This functionality is currently disabled on the Government PaaS. We intend to make it available in future, following security testing.
-
 ## 404s after commands that restart the app
 
 After you use a command that restarts application instances, such as ``cf push`` or ``cf restart``, your app may briefly return incorrect 404 errors. Apart from the brief downtime, this may lead to problems if the 404 is cached, or visiting web crawling bots (as used by search engines) receive a 404.
