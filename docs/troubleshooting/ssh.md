@@ -83,9 +83,9 @@ stack: cflinuxfs2
 buildpack: staticfile_buildpack
 
      state     since                    cpu    memory        disk         details
-#0   running   2016-12-21 02:27:11 PM   0.0%   7.1M of 64M   6.8M of 1G
-#1   running   2016-12-21 02:44:46 PM   0.0%   3.5M of 64M   6.8M of 1G
-#2   running   2016-12-21 02:44:46 PM   0.0%   0 of 64M      0 of 1G
+#0   running   2016-12-21 02:27:11 PM   3.0%   7.1M of 64M   6.8M of 1G
+#1   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
+#2   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
 ```
 
 There are 3 instances, with instance indexes from 0 to 2.
