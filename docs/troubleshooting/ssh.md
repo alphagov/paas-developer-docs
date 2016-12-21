@@ -129,7 +129,7 @@ you need to enable SSH for the space using:
 cf allow-space-ssh SPACENAME
 ```
 
-Your PaaS account needs the ``OrgManager`` or ``SpaceManager`` role to be able to enable SSH for a space. If the command above fails, ask someone with the ``OrgManager`` role (probably a senior member of your team) to run it for you, or contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+Your PaaS account needs the ``OrgManager`` or ``SpaceManager`` role to be able to enable SSH for a space. If the command above fails, ask someone with the correct role (probably a senior member of your team) to run it for you, or contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 
 ## Limiting SSH access
