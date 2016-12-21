@@ -1,5 +1,5 @@
 
-If your app deployment is failing and it's not clear why from the command line client messages, you should consult the logs.
+If your app is failing to deploy, or crashing, and it's not clear why from the command line client messages, you should consult the logs.
 
 For log messages to be captured by Cloud Foundry, your application should be writing them to `STDOUT`/`STDERR`, rather than a log file.
 

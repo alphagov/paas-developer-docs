@@ -30,9 +30,10 @@ pages:
     - 'Services Overview': 'deploying_services/index.md'
     - 'Using a PostgreSQL Service': 'deploying_services/postgres.md'
 - Troubleshooting:
-    - 'App Deployment Problems': 'troubleshooting/index.md'
+    - 'App Deployment and Logs': 'troubleshooting/index.md'
     - 'CLI Client Problems': 'troubleshooting/cli.md'
     - 'PORT Environment Variable': 'troubleshooting/port.md'
+    - 'Connecting with SSH': 'troubleshooting/ssh.md'
 - Managing Apps:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
