@@ -31,6 +31,39 @@ go to the section below on [Enabling SSH for an app](#enabling-ssh-for-an-app).
 
 Note that you do not need to generate any SSH keys. The `cf` CLI tool handles authentication for you.
 
+## Connecting with multiple instances
+
+You may be running multiple instances of an app (created using `cf scale` or ``instances:`` in the manifest).
+
+In this situation, each instance has a numerical instance index to distinguish it. You can see this in this example of the output of ``cf app exampleapp``:
+
+```
+requested state: started
+instances: 3/3
+usage: 64M x 3 instances
+urls: exampleapp.cloudapps.digital
+last uploaded: Wed Dec 21 13:56:24 UTC 2016
+stack: cflinuxfs2
+buildpack: staticfile_buildpack
+
+     state     since                    cpu    memory        disk         details
+#0   running   2016-12-21 02:27:11 PM   3.0%   7.1M of 64M   6.8M of 1G
+#1   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
+#2   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
+```
+
+There are 3 instances, with instance indexes from 0 to 2.
+
+If you have multiple instances like this and use `cf-ssh`, you will be connected to the app with an instance index of 0. 
+
+You can connect to a particular instance. For example, if you want to connect to instance 2, you can do this:
+
+```
+cf ssh --app-instance-index 2
+```
+
+
+
 ## SSH permissions in Government PaaS
 
 SSH can be either enabled or disabled independently for each **space** and **app**. 
@@ -63,40 +96,11 @@ you need to enable SSH for the app by running:
 cf enable-ssh APPNAME
 ```
 
+If you are running multiple instances of an app (created with `cf scale` or with ``instances:`` in the manifest), the ``enable-ssh`` command will affect all of them.
+
 You do not need a special account permission level to enable SSH for an app. The default `SpaceDeveloper` role allows you to do this.
 
 If SSH is already enabled, or enabling it still doesn't make SSH work, go to [Enabling SSH for a space](#enabling-ssh-for-a-space) below.
-
-### Apps with multiple instances
-
-If you are running multiple instances of an app (created with `cf scale` or with ``instances:`` in the manifest), the ``enable-ssh`` command will affect all of them.
-
-Each instance has a numerical instance index to distinguish it. You can see this in this example of the output of ``cf app exampleapp``:
-
-```
-requested state: started
-instances: 3/3
-usage: 64M x 3 instances
-urls: exampleapp.cloudapps.digital
-last uploaded: Wed Dec 21 13:56:24 UTC 2016
-stack: cflinuxfs2
-buildpack: staticfile_buildpack
-
-     state     since                    cpu    memory        disk         details
-#0   running   2016-12-21 02:27:11 PM   3.0%   7.1M of 64M   6.8M of 1G
-#1   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
-#2   running   2016-12-21 02:44:46 PM   1.0%   3.5M of 64M   6.8M of 1G
-```
-
-There are 3 instances, with instance indexes from 0 to 2.
-
-If you have multiple instances like this and use `cf-ssh`, you will be connected to the app with an instance index of 0. 
-
-You can connect to a particular instance. For example, if you want to connect to instance 2, you can do this:
-
-```
-cf ssh --app-instance-index 2
-```
 
 
 ## Enabling SSH for a space
