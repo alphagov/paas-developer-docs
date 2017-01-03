@@ -123,3 +123,19 @@ Then you'll need to add a `DATABASES` setting. It's best to add this to the `set
 Your `local_settings.py` file will override this when you're working locally.
 
 The `Procfile` configuration provided in the section above will automatically apply database migrations.
+
+##Adding more instances
+
+For a production app, you should run at least two instances of the app to ensure availability.
+
+You can add another instance by running:
+
+``cf scale APPNAME -i 2``
+
+or by adding this to the manifest and then pushing the app again:
+
+```
+---
+  ...
+  instances: 2
+```

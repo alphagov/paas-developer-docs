@@ -59,6 +59,8 @@ This is the code for the example app we are going to use. It is a basic web serv
 
 See [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html) [external link] in the Cloud Foundry documentation for more information.
 
+
+
 ##PostgreSQL setup with Node.js
 
 If your app depends on [backing services](/deploying_services/) such as PostgreSQL, it will need to parse the `VCAP_SERVICES` environment variable to get required details, such as service URLs and credentials.
@@ -102,3 +104,18 @@ You should also remember to include dependencies for any service bindings in ``p
     }
     ```
 
+##Adding more instances
+
+For a production app, you should run at least two instances of the app to ensure availability.
+
+You can add another instance by running:
+
+``cf scale APPNAME -i 2``
+
+or by adding this to the manifest and then pushing the app again:
+
+```
+---
+  ...
+  instances: 2
+```
