@@ -62,3 +62,10 @@ You can add another instance of this static app by running:
 
 ``cf scale APPNAME -i 2``
 
+or by adding this to the manifest and pushing again:
+
+```
+---
+  ...
+  instances: 2
+```

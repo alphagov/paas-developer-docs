@@ -127,11 +127,22 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
 Your app should now be live at `https://APPNAME.cloudapps.digital`!
 
-For a production service, you should run at least two instances of the app to ensure availability.
+##Adding more instances
 
-You can add another instance of your app by running:
+For a production app, you should run at least two instances of the app to ensure availability.
+
+You can add another instance by running:
 
 ``cf scale APPNAME -i 2``
+
+or by adding this to the manifest and then pushing the app again:
+
+```
+---
+  ...
+  instances: 2
+```
+
 
 ## Web servers
 

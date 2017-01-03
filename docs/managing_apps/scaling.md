@@ -17,6 +17,14 @@ For example, this command sets the number of running instances to five:
 
 ``cf scale APPNAME -i 5``
 
+You can add the number of instances to start when the app is pushed to the manifest:
+
+```
+---
+  ...
+  instances: 2
+```
+
 For a production app, you should always have at least two running instances.
 
 ##Increasing memory and disk space
