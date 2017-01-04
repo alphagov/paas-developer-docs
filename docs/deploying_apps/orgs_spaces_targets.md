@@ -18,7 +18,7 @@ Each organisation is divided into one or more **spaces**, which are used to orga
 
 ![Diagram showing that an organisation contains multiple spaces](/img/org-spaces.png)
 
-Different accounts can have different permissions to access each space. For example, you may choose to grant a junior developer's account access to your ``development`` space, but not to ``production``. To set access, your account needs to have the ``OrgManager`` role; see the section below on [Managing spaces](#managing-spaces) for details.
+Different accounts can have different permissions to access each space. For example, you may choose to grant a junior developer's account access to your ``development`` space, but not to ``production``. To set access, your account needs to have the Org Manager role; see the section on [Managing users](/manage-users) for details.
 
 To see the spaces you can access in your current org, run:
 
@@ -40,21 +40,19 @@ You can change space without changing org using:
 
 ## Managing spaces
 
-You can create new spaces within an org if your account has the ``OrgManager`` role. To find out who has that role, run:
+You can create new spaces within an org if your account has the Org Manager  role. To find out who has that role, run:
 
 ``cf org-users ORGNAME``
 
 where ORGNAME is the name of the org. You will see a list of users and their roles.
 
-If you don't have the ``OrgManager`` role and you need to create a new space,  you should ask a co-worker who is an ``OrgManager`` for your organisation. If you need the ``OrgManager`` role to be added to your account, contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
-
-As an ``OrgManager``, you can use:
+As an [Organisation Manager](), you can use:
 
 ``cf create-space SPACENAME -o ORGNAME`` 
 
 to create a new space.
 
-You will then need to grant access to any tenant accounts who should be able to use that space. You do this by assigning a role. In most cases, the role you will assign is ``SpaceDeveloper``, which gives the account an ability to deploy and manage apps in the specified space.
+You will then need to grant access to any tenant accounts who should be able to use that space. You do this by assigning a role. In most cases, the role you will assign is [Space Developer](), which gives the account an ability to deploy and manage apps in the specified space.
 
 To grant access to a space to another account, run:
 

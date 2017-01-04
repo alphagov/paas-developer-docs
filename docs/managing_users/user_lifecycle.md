@@ -1,11 +1,28 @@
-It is expected that users dynamically join and leave the platform as they work on different projects and join/leave jobs in real life. User life cycle management and responsibilities are currently split between PaaS support and [Org managers](manage_users.md#Organisation manager).
+Users will need to be added or removed from the Government PaaS as they join or leave your team.
 
-### Onboarding
-User creation is currently handled by PaaS support.
+The responsibility for managing the user lifecycle is split between Government PaaS support and the [Org Manager](/manage_users#Organisation-manager) on your team. 
 
-If you are looking to start a new project on the platform, please do reach us and indicate this. We'll get in touch and apart from creating your user account, we'll also create an appropriately sized organization. We will be creating [org manager](manage_users.md#organisation-manager) account first, meaning you should have decided who will have this role/responsibility in your team/project.
+[comment]: # (do we actually allow more than one Org Manager??)
 
-If you are a new user to be added to an existing org, we'll need your manager approval (unless the account creation is already raised by the org manager). We'll create your account and you will be added to the org and the default 'sandbox' space. Your org manager will then add you to spaces you need to be member of to do your work on the project.
+This section explains what needs to be done to create or delete users.
+
+### Creating users
+User creation is currently handled by our support team.
+
+If you are looking to start a new project on the platform, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). We'll get in touch and create your user account and organisation. We will create the [Org Manager](/manage_users#organisation-manager) account first, meaning you should have decided who will have this responsibility in your team/project.
+
+If you are a new user to be added to an existing org, we'll need your manager's approval. We'll create your account and you will be added to the org and the default 'sandbox' space. Your Org Manager will then grant you any additional user roles you need.
+
+[comment]: # (why don't Org Managers just create users directly? CF allows this and the previous section says they can to. what happens if they do? should we say not to?)
 
 ### Deleting users
-When team members stop working on projects, or even leave GDS, their access rights and even accounts should be revoked. When this situation happens, it is duty of org manager to _immediately_ remove user rights and roles (e.g. space developer) that allow users to manage existing apps and services. If the user is only leaving one project (organisation), but still need to manage other projects in other organisations, nothing more needs to be done. But if this is the last project of the user, then the org manager of that last project should raise a support request with PaaS support to completely remove the user account from the platform.
+
+When a team member leaves or stops working on a project, their access rights should be revoked. 
+
+When this situation happens, an Org Manager must _immediately_ remove all user roles (e.g. Space Developer) that allow the user to manage existing apps and services. 
+
+If the user is only leaving one project, but still needs access on the PaaS to work on other projects in other organisations, nothing more needs to be done. 
+
+If the user no longer needs access to the Government PaaS, then the Org Manager should raise a support request with PaaS support to completely remove the user account from the platform.
+
+[comment]: # (what if they're going to be inactive for 3 weeks? Or they're a contractor who might be hired again? More guidance on when to delete versus strip permissions)
