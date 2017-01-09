@@ -38,7 +38,7 @@ pages:
     - 'Scaling Apps' : 'managing_apps/scaling.md'
     - 'Quotas': 'managing_apps/quotas.md'
     - 'Redirecting All Traffic': 'managing_apps/redirect_all_traffic.md'
-- Administration:
-    - 'Managing Users' : 'managing_users/manage_users.md'
+- Managing Accounts:
+    - 'User Accounts' : 'managing_users/user_accounts.md'
     - 'User Lifecycle' : 'managing_users/user_lifecycle.md'
 copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.

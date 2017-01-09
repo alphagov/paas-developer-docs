@@ -2,7 +2,9 @@
 
 Government PaaS is currently in private beta.
 
-If your organisation is taking part in the private beta and you need an account, or you'd like to find about taking part in the beta, please contact us by emailing [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+If your organisation is already taking part in the private beta and you need an account, please talk to your manager who will need to authorise creating your account.
+
+If you'd like to find about taking part in the beta, please contact us by emailing [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). You will need to nominate at least one person as an [Org Manager](/managing_users/user_accounts)who can authorise adding more users. 
 
 We currently restrict which IP addresses are allowed to access the PaaS to deploy and manage apps. As part of the setup process, you will need to provide us with a list of all the IPs you and your developers will use to access the PaaS. You can [check our whitelist of allowed IPs here](https://github.com/alphagov/paas-cf/blob/master/terraform/prod.tfvars#L9).
 

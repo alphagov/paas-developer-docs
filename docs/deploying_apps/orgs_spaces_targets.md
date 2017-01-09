@@ -2,6 +2,8 @@
 
 Your tenant account belongs to at least one **organisation** ("org" for short) within the PaaS. This typically represents the real-world organisation, department or team you work for. Your co-workers' tenant accounts will belong to the same org. 
 
+Typically a team has a single organisation, but you can have more than one.
+
 To list the orgs your account can access, run:
 
 ``cf orgs``
@@ -18,7 +20,9 @@ Each organisation is divided into one or more **spaces**, which are used to orga
 
 ![Diagram showing that an organisation contains multiple spaces](/img/org-spaces.png)
 
-Different accounts can have different permissions to access each space. For example, you may choose to grant a junior developer's account access to your ``development`` space, but not to ``production``. To set access, your account needs to have the Org Manager role; see the section on [Managing users](/manage-users) for details.
+Different accounts can have different permissions to access each space. For example, you may choose to give a junior developer access to your ``development`` space, but not to ``production``. To change which accounts have access, your account needs to have the Org Manager role; see the section on [Managing users](/managing_users/user_accounts) for details.
+
+When we set up your organisation, we create a default `sandbox` space you can use for experimenting with the PaaS.
 
 To see the spaces you can access in your current org, run:
 
@@ -40,13 +44,15 @@ You can change space without changing org using:
 
 ## Managing spaces
 
-You can create new spaces within an org if your account has the Org Manager  role. To find out who has that role, run:
+You can create new spaces within an org if your account has the [Org Manager](/managing_users/user_accounts#Org-manager) role. To find out who has that role, run:
 
 ``cf org-users ORGNAME``
 
-where ORGNAME is the name of the org. You will see a list of users and their roles.
+where `ORGNAME` is the name of the org. You will see a list of users and their roles.
 
-As an [Organisation Manager](), you can use:
+If your account does not have the Org Manager role and you need to create a new space, you should ask a co-worker who is an Org Manager for your organisation.
+
+As an Org Manager , you can use:
 
 ``cf create-space SPACENAME -o ORGNAME`` 
 
