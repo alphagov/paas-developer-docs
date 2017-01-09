@@ -1,6 +1,6 @@
 Users will need to be added or removed from the Government PaaS as they join or leave your team.
 
-The responsibility for managing the user lifecycle is split between Government PaaS support and the [Org Managers](/manage_users#Org-manager) on your team. 
+The responsibility for managing the user lifecycle is split between Government PaaS support and the [Org Managers](/managing_users/user_accounts#org-manager) on your team. 
 
 This section explains what needs to be done to create or delete users.
 
@@ -8,7 +8,7 @@ This section explains what needs to be done to create or delete users.
 
 User account creation is currently handled by our support team.
 
-If you are looking to start a new project on the platform, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). We'll get in touch and create your user account and organisation. We will create the [Org Manager](/managing_users/user_accounts#Org-manager) account first, meaning you should have decided who will have this responsibility in your team/project.
+If you are looking to start a new project on the platform, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk). We'll get in touch and create your user account and organisation. We will create the [Org Manager](/managing_users/user_accounts#org-manager) account first, meaning you should have decided who will have this responsibility in your team/project.
 
 If you are a new user who needs to be added to an existing account, we'll need your manager's approval. We'll create your account and you will be added to the org and the default 'sandbox' space. Your Org Manager will then grant you any additional user roles you need.
 

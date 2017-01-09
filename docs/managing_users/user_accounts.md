@@ -33,7 +33,7 @@ For example, suppose you have a senior developer who manages junior developers w
 ### Org Manager
 This role applies to a particular organisation. Typically, each team only has one organisation, but you can have more than one. 
 
-An Org Manager can create/delete spaces and edit user roles. See the section on [Managing spaces](orgs_spaces_targets#managing-spaces) for details. 
+An Org Manager can create/delete spaces and edit user roles. See the section on [Managing spaces](/deploying_apps/orgs_spaces_targets#managing-spaces) for details. 
 
 As an Org Manager, you have responsibilities related to adding and removing users: see the section on [User lifecycle](/managing_users/user_lifecycle).
 
