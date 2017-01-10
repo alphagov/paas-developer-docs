@@ -56,9 +56,13 @@ As an Org Manager, you can use:
 
 ``cf create-space SPACENAME -o ORGNAME`` 
 
-to create a new space.
+to create a new space. You will then need to grant access to any tenant accounts who should be able to use that space.
 
-You will then need to grant access to any tenant accounts who should be able to use that space. You do this by assigning a role. In most cases, the role you will assign is [Space Developer](/managing_users/user_accounts#space-developer), which gives the account an ability to deploy and manage apps in the specified space.
+## Granting access
+
+You grant access to a space by assigning a role to an account. To assign roles, you need to be an [Org Manager](/managing_users/user_accounts#org-manager) or [Space Manager](/managing_users/user_accounts#space-manager).
+
+In most cases, the role you will assign is [Space Developer](/managing_users/user_accounts#space-developer), which gives an account an ability to deploy and manage apps in the specified space.
 
 To grant access to a space to another account, run:
 
