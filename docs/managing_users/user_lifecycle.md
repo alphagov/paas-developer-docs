@@ -1,6 +1,6 @@
-Users will need to be added or removed from the Government PaaS as they join or leave your team.
+Users will need to be added or removed from GOV.UK PaaS as they join or leave your team.
 
-The responsibility for managing the user lifecycle is split between Government PaaS support and the [Org Managers](/managing_users/user_accounts#org-manager) on your team. 
+The responsibility for managing the user lifecycle is split between GOV.UK PaaS support and the [Org Managers](/managing_users/user_accounts#org-manager) on your team. 
 
 This section explains what needs to be done to add or delete users.
 
@@ -50,4 +50,4 @@ cf unset-org-role boss@example.com acme OrgManager
 
 If the user is only leaving one project, but still needs access on the PaaS to work on other projects in other organisations, nothing more needs to be done. 
 
-If the user no longer needs access to the Government PaaS, then the Org Manager should ask PaaS support to completely remove the user account.
+If the user no longer needs access to GOV.UK PaaS, then the Org Manager should ask us to completely remove the user account.

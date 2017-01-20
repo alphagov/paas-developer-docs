@@ -1,15 +1,15 @@
-site_name: Government Platform as a Service Technical Documentation
+site_name: GOV.UK Platform as a Service Technical Documentation
 theme: readthedocs
 extra_javascript:
   - js/fix_search.js
 pages:
 - Overview:
-    - 'Government Platform as a Service (PaaS)': 'index.md'
-    - 'Benefits of PaaS' : 'overview/benefits.md'
+    - 'GOV.UK Platform as a Service (PaaS)': 'index.md'
+    - 'Benefits of GOV.UK PaaS' : 'overview/benefits.md'
     - 'Technology' : 'overview/technology.md'
     - 'Pricing' : 'overview/pricing.md'
 - Getting Started:
-    - 'PaaS Requirements': 'getting_started/before_you_start.md'
+    - 'GOV.UK PaaS Requirements': 'getting_started/before_you_start.md'
     - 'Quick Setup Guide': 'getting_started/quick_setup_guide.md'
     - 'Choosing Passwords': 'getting_started/passwords.md'
     - 'Limitations': 'getting_started/limitations.md'

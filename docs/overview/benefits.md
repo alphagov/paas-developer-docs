@@ -1,4 +1,4 @@
-Right now, development teams spend considerable time and money setting up all the components required to host a government service (eg, application monitoring, logging and alerting techniques). With Government PaaS, development teams can save on this effort by using a hosting stack that’s already been developed.
+Right now, development teams spend considerable time and money setting up all the components required to host a government service (eg, application monitoring, logging and alerting techniques). With GOV.UK PaaS, development teams can save on this effort by using a hosting stack that’s already been developed.
 
 Your development team can use PaaS to deploy and run government applications written in a range of languages and web frameworks. You’ll simply need to push your source code to the PaaS environment and the code will be compiled and deployed for you.
 

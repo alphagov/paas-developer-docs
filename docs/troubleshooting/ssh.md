@@ -1,6 +1,6 @@
 ## SSH overview
 
-When you deploy an app to the PaaS, it runs in a container, which is like a lightweight Linux virtual machine. Each app runs in its own isolated container.
+When you deploy an app to GOV.UK PaaS, it runs in a container, which is like a lightweight Linux virtual machine. Each app runs in its own isolated container.
 
 Sometimes, it can be useful to connect directly to the container with SSH. You would usually only do this to get information for troubleshooting purposes, for example, if you can't work out what is happening with your app using the `cf logs` and `cf events` commands described in the [App Deployment and Logs](/troubleshooting) section. 
 
@@ -64,7 +64,7 @@ cf ssh --app-instance-index 2
 
 
 
-## SSH permissions in Government PaaS
+## SSH permissions in GOV.UK PaaS
 
 SSH can be either enabled or disabled independently for each **space** and **app**. 
 
@@ -133,7 +133,7 @@ you need to enable SSH for the space using:
 cf allow-space-ssh SPACENAME
 ```
 
-Your PaaS account needs the ``OrgManager`` or ``SpaceManager`` role to be able to enable SSH for a space. If the command above fails, ask someone with the correct role (probably a senior member of your team) to run it for you, or contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+Your GOV.UK PaaS account needs the ``OrgManager`` or ``SpaceManager`` role to be able to enable SSH for a space. If the command above fails, ask someone with the correct role (probably a senior member of your team) to run it for you, or contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 
 ## Limiting SSH access
