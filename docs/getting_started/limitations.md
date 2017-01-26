@@ -2,7 +2,7 @@ While the Government PaaS is built using Cloud Foundry technology, we don't supp
 
 ## IP restrictions
 
-We currently only accept command line client connections from a list of approved IP addresses (a 'whitelist'). When you sign up to use the PaaS, you must tell us the IPs or IP ranges you and your developers will connect from, so we can add them to our whitelist. 
+We currently only accept command line client connections from a list of approved IP addresses (a 'whitelist'). When you sign up to use the PaaS, you must tell us the IPs or IP ranges you and your developers will connect from, so we can add them to our whitelist.
 
 You can view [the list of allowed IPs](https://github.com/alphagov/paas-cf/blob/master/terraform/prod.tfvars#L9). If you want us to allow additional IPs, please email us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
@@ -10,7 +10,7 @@ Note that IP restrictions only apply to use of the command line client; there is
 
 ## Custom buildpacks are not supported
 
-Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages. 
+Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages.
 
 Government PaaS does not support [custom buildpacks](https://docs.cloudfoundry.org/buildpacks/custom.html) [external link]. We only support the [standard buildpacks](https://docs.cloudfoundry.org/buildpacks/) [external link], with the exception of the .NET Core buildpack.
 
@@ -42,16 +42,16 @@ In the meantime, we suggest that you use a [blue-green deployment process](https
 
 ## API access may have brief outages during beta
 
-During the beta period, there may be occasional brief periods where API access is unavailable during a platform update, causing commands sent from the command line client to fail. 
+During the beta period, there may be occasional brief periods where API access is unavailable during a platform update, causing commands sent from the command line client to fail.
 
-If you find that a valid command is failing and the error message does not explain the problem, please wait 5 minutes before trying the command again. If the error persists for more than 5 minutes, it is unlikely to be caused by a platform update and you should contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).  
+If you find that a valid command is failing and the error message does not explain the problem, please wait 5 minutes before trying the command again. If the error persists for more than 5 minutes, it is unlikely to be caused by a platform update and you should contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
 
 We are working on a fix to prevent the interruption of API access when we update the platform.
 
 
 ## Deploying Docker images is not currently enabled
 
-Cloud Foundry supports pushing a [Docker](https://www.docker.com/) image as an app. 
+Cloud Foundry supports pushing a [Docker](https://www.docker.com/) image as an app.
 
 This feature is *not* currently enabled on the Government PaaS because allowing deployment from Docker images, where the root filesystem is controlled by the tenant, raises additional security concerns: see [this note from the CF developers](https://github.com/cloudfoundry/diego-design-notes/blob/c59e475020a22e244c6074f89c45b55f7b1e2867/docker-support.md#docker-in-a-multi-tenant-world) for more details.
 
