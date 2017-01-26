@@ -1,4 +1,4 @@
-While the Government PaaS is built using Cloud Foundry technology, we don't support all Cloud Foundry features. This section explains some Cloud Foundry features that are not enabled, as well as some limitations of the beta phase.
+While the GOV.UK PaaS is built using Cloud Foundry technology, we don't support all Cloud Foundry features. This section explains some Cloud Foundry features that are not enabled, as well as some limitations of the beta phase.
 
 ## IP restrictions
 
@@ -12,7 +12,7 @@ Note that IP restrictions only apply to use of the command line client; there is
 
 Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages. 
 
-Government PaaS does not support [custom buildpacks](https://docs.cloudfoundry.org/buildpacks/custom.html) [external link], only the [standard buildpacks](https://docs.cloudfoundry.org/buildpacks/) [external link].
+GOV.UK PaaS does not support [custom buildpacks](https://docs.cloudfoundry.org/buildpacks/custom.html) [external link], only the [standard buildpacks](https://docs.cloudfoundry.org/buildpacks/) [external link].
 
 If you want to use a custom buildpack because you need a newer version of a runtime or framework, please note that we update the standard buildpacks on a regular basis (approximately monthly).
 
@@ -22,7 +22,7 @@ If you'd like to use custom buildpacks, please contact us at [gov-uk-paas-suppor
 
 By default, your uploaded apps will be hosted on the ``cloudapps.digital`` domain. In production, you will probably want your app to be available through your own url (for example, ``yourapp.service.gov.uk``).
 
-Custom domains are not yet fully supported by the Government PaaS due to TLS certificate issues.
+Custom domains are not yet fully supported by the GOV.UK PaaS due to TLS certificate issues.
 
 Currently, we recommend that you use a CDN to serve your app with a custom domain. If this is not a suitable solution for you, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk) with details of your use case.
 
@@ -53,7 +53,7 @@ We are working on a fix to prevent the interruption of API access when we update
 
 Cloud Foundry supports pushing a [Docker](https://www.docker.com/) image as an app. 
 
-This feature is *not* currently enabled on the Government PaaS because allowing deployment from Docker images, where the root filesystem is controlled by the tenant, raises additional security concerns: see [this note from the CF developers](https://github.com/cloudfoundry/diego-design-notes/blob/c59e475020a22e244c6074f89c45b55f7b1e2867/docker-support.md#docker-in-a-multi-tenant-world) for more details.
+This feature is *not* currently enabled on the GOV.UK PaaS because allowing deployment from Docker images, where the root filesystem is controlled by the tenant, raises additional security concerns: see [this note from the CF developers](https://github.com/cloudfoundry/diego-design-notes/blob/c59e475020a22e244c6074f89c45b55f7b1e2867/docker-support.md#docker-in-a-multi-tenant-world) for more details.
 
 We may enable support for Docker images in the future. If you would like to be able to push Docker images, please contact our support team at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk), providing details of your use case.
 
@@ -61,4 +61,4 @@ We may enable support for Docker images in the future. If you would like to be a
 
 [Cloud Foundry route services](http://docs.cloudfoundry.org/services/route-services.html) [external link] are used to apply transformation or processing to requests before they reach an application.
 
-Route services are currently disabled on Government PaaS. If you'd like to discuss your use case for route services and possible workarounds, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk)
+Route services are currently disabled on GOV.UK PaaS. If you'd like to discuss your use case for route services and possible workarounds, please contact us at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk)
