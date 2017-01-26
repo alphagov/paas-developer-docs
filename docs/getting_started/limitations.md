@@ -12,7 +12,7 @@ Note that IP restrictions only apply to use of the command line client; there is
 
 Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages. 
 
-Government PaaS does not support [custom buildpacks](https://docs.cloudfoundry.org/buildpacks/custom.html) [external link], only the [standard buildpacks](https://docs.cloudfoundry.org/buildpacks/) [external link].
+Government PaaS does not support [custom buildpacks](https://docs.cloudfoundry.org/buildpacks/custom.html) [external link]. We only support the [standard buildpacks](https://docs.cloudfoundry.org/buildpacks/) [external link], with the exception of the .NET Core buildpack.
 
 If you want to use a custom buildpack because you need a newer version of a runtime or framework, please note that we update the standard buildpacks on a regular basis (approximately monthly).
 

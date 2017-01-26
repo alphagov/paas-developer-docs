@@ -11,7 +11,7 @@ The platform itself will be supported 24/7 by GDS, although this does not includ
 Features of the PaaS platform currently include:
 
 *   PostgreSQL and will include database back-ups
-*   language support as provided by the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/) [external link]
+*   language support as provided by most of the [default Cloud Foundry buildpacks](http://docs.cloudfoundry.org/buildpacks/) [external link]. The only one not currently supported is the .NET Core buildpack.
 *   ability to stream application logs to Software as a Service logging platforms
 
 ### Coding in the open
