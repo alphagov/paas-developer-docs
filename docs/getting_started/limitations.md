@@ -8,7 +8,7 @@ You can view [the list of allowed IPs](https://github.com/alphagov/paas-cf/blob/
 
 Note that IP restrictions only apply to use of the command line client; there is no restriction on access to your deployed apps, which are available to everyone.
 
-## Custom buildpacks are not supported
+## Custom buildpacks and .NET are not supported
 
 Cloud Foundry uses buildpacks to provide runtime and framework support for applications in different languages.
 
