@@ -1,4 +1,6 @@
-# Government PaaS Developer Docs
+# DEPRECATED
+
+This is the old Government PaaS Developer Docs system. We are transitioning to the new system (see https://github.com/alphagov/paas-tech-docs). If you need to make docs changes, make them in the new system, which will become the official documentation shortly. 
 
 This project uses [MkDocs][]. It is automatically built and hosted by [Read
 the Docs][] at the following URL:
