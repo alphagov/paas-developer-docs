@@ -1,7 +1,7 @@
-site_name: GOV.UK Platform as a Service Technical Documentation
+site_name: This documentation has moved!
 theme: readthedocs
 extra_javascript:
-  - js/fix_search.js
+    - redirect.js
 pages:
 - Overview:
     - 'GOV.UK Platform as a Service (PaaS)': 'index.md'
@@ -41,4 +41,3 @@ pages:
 - Managing Accounts:
     - 'User Accounts' : 'managing_users/user_accounts.md'
     - 'User Lifecycle' : 'managing_users/user_lifecycle.md'
-copyright: Found a mistake in this documentation? Or do you have a question it doesn't answer? Please email us at <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>.
