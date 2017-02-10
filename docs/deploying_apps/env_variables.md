@@ -1,2 +1,2 @@
-# The Government PaaS documentation has moved!
+# The documentation for GOV.UK PaaS has moved!
 This page can now be found at [https://docs.cloud.service.gov.uk/#environment-variables](https://docs.cloud.service.gov.uk/#environment-variables), you will be automatically redirected in 5 seconds.
