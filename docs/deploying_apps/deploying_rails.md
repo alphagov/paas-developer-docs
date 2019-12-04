@@ -1,2 +1,0 @@
-# The documentation for GOV.UK PaaS has moved!
-This page can now be found at [https://docs.cloud.service.gov.uk/#deploy-a-ruby-on-rails-app](https://docs.cloud.service.gov.uk/#deploy-a-ruby-on-rails-app), you will be automatically redirected in 5 seconds.
