@@ -1,2 +1,0 @@
-# The documentation for GOV.UK PaaS has moved!
-This page can now be found at [https://docs.cloud.service.gov.uk/#benefits](https://docs.cloud.service.gov.uk/#benefits), you will be automatically redirected in 5 seconds.
